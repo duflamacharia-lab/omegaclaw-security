@@ -1,5 +1,7 @@
 pub mod agent;
+pub mod ctf;
 pub mod manifest;
+pub mod mcp;
 pub mod metta_runtime;
 pub mod policy;
 pub mod providers;

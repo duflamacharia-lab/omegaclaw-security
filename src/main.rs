@@ -2,6 +2,10 @@ use axum::{extract::State, http::StatusCode, response::IntoResponse, routing::ge
 use chrono::{DateTime, Utc};
 use omegaclaw::policy::{evaluate, Decision, PolicyInput};
 use omegaclaw::storage::{CreateStoredCase, SqliteStore, StoredAsset, StoredEvidenceInput};
+use omegaclaw::{
+    ctf::{plan_import, CtfImportRequest},
+    mcp::{McpCall, McpClient},
+};
 use reqwest::Client;
 use serde::{Deserialize, Serialize};
 use std::net::SocketAddr;
@@ -202,6 +206,55 @@ async fn provider_probe(State(state): State<AppState>) -> impl IntoResponse {
     Json(result)
 }
 
+async fn mcp_tools(State(state): State<AppState>) -> impl IntoResponse {
+    match McpClient::from_env(state.client.clone()) {
+        Ok(client) => match client.list_tools().await {
+            Ok(tools) => {
+                Json(serde_json::json!({"configured": true, "tools": tools})).into_response()
+            }
+            Err(error) => (
+                StatusCode::BAD_GATEWAY,
+                Json(serde_json::json!({"error": error.to_string()})),
+            )
+                .into_response(),
+        },
+        Err(error) => (
+            StatusCode::SERVICE_UNAVAILABLE,
+            Json(serde_json::json!({"configured": false, "error": error.to_string()})),
+        )
+            .into_response(),
+    }
+}
+
+async fn mcp_call(State(state): State<AppState>, Json(call): Json<McpCall>) -> impl IntoResponse {
+    match McpClient::from_env(state.client.clone()) {
+        Ok(client) => match client.call(call).await {
+            Ok(result) => Json(serde_json::json!({"ok": true, "result": result})).into_response(),
+            Err(error) => (
+                StatusCode::BAD_GATEWAY,
+                Json(serde_json::json!({"ok": false, "error": error.to_string()})),
+            )
+                .into_response(),
+        },
+        Err(error) => (
+            StatusCode::SERVICE_UNAVAILABLE,
+            Json(serde_json::json!({"ok": false, "error": error.to_string()})),
+        )
+            .into_response(),
+    }
+}
+
+async fn ctf_import(Json(request): Json<CtfImportRequest>) -> impl IntoResponse {
+    match plan_import(request) {
+        Ok(plan) => (StatusCode::OK, Json(plan)).into_response(),
+        Err(error) => (
+            StatusCode::BAD_REQUEST,
+            Json(serde_json::json!({"error": error})),
+        )
+            .into_response(),
+    }
+}
+
 #[tokio::main]
 async fn main() {
     tracing_subscriber::fmt()
@@ -222,6 +275,9 @@ async fn main() {
         .route("/api/cases", get(list_cases).post(create_case))
         .route("/api/cases/:id/policy", get(case_policy))
         .route("/api/providers", get(provider_probe))
+        .route("/api/mcp/tools", get(mcp_tools))
+        .route("/api/mcp/call", axum::routing::post(mcp_call))
+        .route("/api/ctf/import", axum::routing::post(ctf_import))
         .nest_service("/", ServeDir::new("frontend/dist"))
         .layer(CorsLayer::permissive())
         .layer(TraceLayer::new_for_http())
