@@ -10,8 +10,6 @@ use tower_http::{cors::CorsLayer, services::ServeDir, trace::TraceLayer};
 use tracing::info;
 use uuid::Uuid;
 
-mod providers;
-
 #[derive(Clone)]
 struct AppState {
     cases: Arc<RwLock<Vec<CaseFile>>>,
