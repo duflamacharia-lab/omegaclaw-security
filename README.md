@@ -93,7 +93,7 @@ Copy `.env.example` to a local environment file. Never commit credentials.
 
 - **Dify** is the traditional workflow/ML orchestration boundary. Configure `DIFY_API_URL` and `DIFY_API_KEY`.
 - **Gemini** is an optional reasoning provider for bounded hypothesis generation. The client uses the official Interactions API with structured JSON output. Configure `GEMINI_API_KEY`, optionally `GEMINI_MODEL`, and keep the key in a server-side secret manager.
-- **Hugging Face** is an optional inference provider for self-selected open models. Configure `HUGGINGFACE_API_TOKEN`, optionally `HUGGINGFACE_MODEL`, and optionally `HUGGINGFACE_API_URL`.
+- **Hugging Face** is an optional inference provider for open models. The default is the cybersecurity-focused `build-small-hackathon/OpenMythos`, with `Qwen/Qwen2.5-Coder-7B-Instruct` as the fallback. Configure `HUGGINGFACE_API_TOKEN`, optionally `HUGGINGFACE_MODEL`, `HUGGINGFACE_FALLBACK_MODEL`, and `HUGGINGFACE_API_URL`. Hugging Face hosted inference may be free/rate-limited depending on the account and endpoint; open weights are free to use but self-hosting still requires compute.
 
 Before enabling network inference in production, add tenant isolation, redaction, request/response provenance, rate limits, retry policy, model pinning, prompt-injection defenses, provider health checks, and evaluation against the OmegaClaw case ledger.
 

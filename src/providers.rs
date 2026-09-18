@@ -188,7 +188,7 @@ impl HuggingFaceProvider {
         Some(Self {
             api_key: std::env::var("HUGGINGFACE_API_TOKEN").ok()?,
             model: std::env::var("HUGGINGFACE_MODEL")
-                .unwrap_or_else(|_| "mistralai/Mistral-7B-Instruct-v0.3".into()),
+                .unwrap_or_else(|_| "build-small-hackathon/OpenMythos".into()),
             base_url: std::env::var("HUGGINGFACE_API_URL")
                 .unwrap_or_else(|_| "https://router.huggingface.co/v1/chat/completions".into()),
             client,
@@ -205,7 +205,29 @@ impl ReasoningProvider for HuggingFaceProvider {
         &self.model
     }
     async fn decide(&self, request: ProviderRequest) -> Result<ProviderResponse, ProviderError> {
-        let body = json!({ "model": self.model, "messages": [{"role":"system","content":request.system},{"role":"user","content":request.input}], "response_format": {"type":"json_object"}, "temperature": 0 });
+        match self.decide_with_model(&self.model, &request).await {
+            Ok(response) => Ok(response),
+            Err(primary_error) => {
+                let fallback = std::env::var("HUGGINGFACE_FALLBACK_MODEL")
+                    .unwrap_or_else(|_| "Qwen/Qwen2.5-Coder-7B-Instruct".into());
+                if fallback == self.model {
+                    return Err(primary_error);
+                }
+                self.decide_with_model(&fallback, &request)
+                    .await
+                    .or(Err(primary_error))
+            }
+        }
+    }
+}
+
+impl HuggingFaceProvider {
+    async fn decide_with_model(
+        &self,
+        model: &str,
+        request: &ProviderRequest,
+    ) -> Result<ProviderResponse, ProviderError> {
+        let body = json!({ "model": model, "messages": [{"role":"system","content":request.system},{"role":"user","content":request.input}], "response_format": {"type":"json_object"}, "temperature": 0 });
         let response = self
             .client
             .post(&self.base_url)
@@ -230,7 +252,7 @@ impl ReasoningProvider for HuggingFaceProvider {
             serde_json::from_str(&text).map_err(|e| ProviderError::InvalidOutput(e.to_string()))?;
         Ok(ProviderResponse {
             provider: self.name().into(),
-            model: self.model.clone(),
+            model: model.into(),
             text,
             structured,
             request_id: raw.get("id").and_then(Value::as_str).map(str::to_string),
