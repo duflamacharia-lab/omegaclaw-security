@@ -14,6 +14,18 @@ The first acceptance milestone is one reproducible CTF success in a pinned local
 
 That milestone is now complete for the local DVD Side Entrance challenge. The result is recorded in `benchmarks/results/dvd-side-entrance-local.json`: the pinned revision passed with Foundry 1.8.3 and Solidity 0.8.25 in an offline disposable workspace. The solver test is not part of the production runtime.
 
+### Capability diagnosis
+
+**MeTTa:** yes, integrated in-process through Hyperon and exercised by the Rust policy path. It loads the four policy files and returns policy metadata. The current tests verify policy behavior and Hyperon compilation, but the DVD solver test did not yet assert an end-to-end MeTTa predicate in the same benchmark run.
+
+**CTF:** yes, one local DVD Side Entrance challenge is verified. It is a local acceptance benchmark, not evidence that OmegaClaw can solve arbitrary CTFs or live targets.
+
+**SQLite:** yes, Case Files, assets, evidence, policy JSON, and audit records persist through reopening the database. Artifact-manifest and benchmark-run tables are still future work.
+
+**MCP:** not yet as a generic OmegaClaw runtime capability. The Dify connector exposes one configured `Omegaclaw` access point, while the repository contains a read-only MCP fixture contract. A production MCP client/allowlist with schema validation, provenance, timeouts, output limits, and audit events remains to be implemented.
+
+**Telegram:** not implemented. The architecture can support a future notification adapter, but it must be notification-only at first and never allow a Telegram message to directly trigger a worker, transaction, trade, or credential-sensitive action.
+
 ## Verified commands
 
 ```bash
