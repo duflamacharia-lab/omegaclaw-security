@@ -6,7 +6,7 @@
 
 ## What is implemented
 
-- Rust/Axum API with an in-memory asset and Case File store.
+- Rust/Axum API with SQLite-backed asset and Case File storage.
 - Versioned asset identity fields: chain, address, source commit, block snapshot, and authority summary.
 - Evidence provenance and separate finding/impact confidence fields.
 - Explicit MVP policy decisions: `abstain`, `reviewable`, or `human_review_required`.
@@ -16,7 +16,7 @@
 - A full `omegaclaw-agent` CLI plugin with repository inspection, defensive file analysis, an allowlisted check runner, structured decisions, and audit-event hashes.
 - A real provider execution path for Gemini Interactions API, Dify blocking workflows, and Hugging Face OpenAI-compatible chat inference. Provider output is still untrusted and remains human-gated.
 - SQLite-backed persistent Case Files, asset identities, evidence records, policy JSON, and append-only audit events.
-- A Rust policy adapter that emits the same conservative predicates represented in the MeTTa policy files.
+- The official Hyperon Rust workspace pinned at commit `3f76dc460da6961f57f69f6c3e550c59c74ada83`; policy decisions execute the MeTTa rule files in-process and persist runtime metadata.
 - Isolated Slither, Foundry, and Echidna worker jobs with native execution or Docker mode (`OMEGACLAW_WORKER_MODE=docker`); Docker mode uses a read-only workspace, dropped Linux capabilities, no network by default, and no-new-privileges.
 
 ## Architecture
@@ -24,9 +24,9 @@
 ```text
 HTML5 + TypeScript console
           |
-       Rust API  ----  Case Files / Asset Graph (MVP in-memory)
+       Rust API  ----  Case Files / Asset Graph (SQLite)
           |
-   policy boundary  ----  MeTTa rules (inspectable source)
+   Hyperon runtime  ----  MeTTa rules (inspectable source)
           |
  isolated analysis adapters: Slither / Foundry / Echidna / Dify / Gemini / Hugging Face
           |
@@ -63,7 +63,7 @@ OMEGACLAW_ALLOW_COMMANDS=true cargo run --bin omegaclaw-agent -- --workspace . c
 
 Use `--provider gemini`, `--provider dify`, or `--provider huggingface` only after configuring the corresponding server-side credentials. The agent never exposes provider keys to the frontend.
 
-The API persists to `OMEGACLAW_DB_PATH` (default `omegaclaw.sqlite3`) and runs migrations at startup. The worker runner supports `slither`, `forge-test`, and `echidna` in addition to Rust/frontend checks. Native tools must already be installed; Docker mode uses the official security-tool images when Docker is available. If a worker is unavailable, OmegaClaw records an unavailable/error result rather than treating the check as passed.
+The API persists to `OMEGACLAW_DB_PATH` (default `omegaclaw.sqlite3`) and runs migrations at startup. The worker runner supports `slither`, `forge-test`, and `echidna` in addition to Rust/frontend checks. Native tools must already be installed; Docker mode uses the official security-tool images when Docker is available. If a worker is unavailable, OmegaClaw records an unavailable/error result rather than treating the check as passed. Policy responses report `metta_execution: "hyperon_in_process"` and the loaded rule-file set when Hyperon succeeds.
 
 Useful endpoints:
 
@@ -99,7 +99,7 @@ Before enabling network inference in production, add tenant isolation, redaction
 
 ## MeTTa
 
-`metta/omegaclaw_rules.metta` is the initial inspectable policy layer. It intentionally keeps rules conservative. The Rust module mirrors the first decisions so the project can run without requiring a MeTTa runtime in every developer environment. The next integration should pin a supported MeTTa runtime and compare Rust decisions against MeTTa decisions in CI.
+The files under `metta/` are the inspectable policy layer. Hyperon is pinned in `Cargo.toml` and executes these rules in-process for each policy decision. The Rust policy engine remains the conservative typed decision layer and records Hyperon execution status, loaded files, and derived predicates for auditability.
 
 ## Security boundaries
 
@@ -107,9 +107,9 @@ OmegaClaw does not claim exhaustive vulnerability discovery, protocol safety, or
 
 ## Roadmap
 
-1. Persist Case Files and asset graph snapshots in PostgreSQL.
-2. Add signed artifact manifests and isolated Slither/Foundry/Echidna workers.
-3. Pin and execute MeTTa rules in CI with decision parity tests.
+1. Add signed artifact manifests and worker-result ingestion.
+2. Expand isolated Slither/Foundry/Echidna jobs with container availability checks.
+3. Add MeTTa decision parity and rule mutation tests in CI.
 4. Add local-fork validation and deployment drift detection.
 5. Add Dify/Gemini/Hugging Face inference behind explicit provider policies and evaluation gates.
 6. Add Forta/OpenZeppelin-compatible runtime adapters and staging-only response simulation.

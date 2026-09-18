@@ -23,6 +23,8 @@ pub struct PolicyDecision {
     pub reasons: Vec<String>,
     pub required_controls: Vec<String>,
     pub metta_predicates: Vec<String>,
+    pub metta_execution: String,
+    pub metta_files: Vec<String>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
@@ -44,6 +46,8 @@ impl PolicyDecision {
                 "resolve deployment identity and freshness failures".into(),
             ],
             metta_predicates: vec!["must-abstain".into()],
+            metta_execution: "pending".into(),
+            metta_files: Vec::new(),
         }
     }
 }
@@ -82,7 +86,9 @@ pub fn evaluate(input: &PolicyInput) -> PolicyDecision {
     }
 
     if !reasons.is_empty() {
-        return PolicyDecision::abstain(reasons);
+        let mut result = PolicyDecision::abstain(reasons);
+        attach_metta(&mut result, input);
+        return result;
     }
 
     if input.authority_changed {
@@ -99,7 +105,7 @@ pub fn evaluate(input: &PolicyInput) -> PolicyDecision {
         controls.push("run a local-fork or transaction simulation".into());
         controls.push("verify expected post-state and dependent paths".into());
         predicates.push("requires-human-review".into());
-        return PolicyDecision {
+        let mut result = PolicyDecision {
             decision: Decision::HumanReviewRequired,
             reasons: if high_impact {
                 vec!["high-impact case requires approval quorum".into()]
@@ -108,25 +114,55 @@ pub fn evaluate(input: &PolicyInput) -> PolicyDecision {
             },
             required_controls: controls,
             metta_predicates: predicates,
+            metta_execution: "pending".into(),
+            metta_files: Vec::new(),
         };
+        attach_metta(&mut result, input);
+        return result;
     }
 
     if input.requested_action.is_some() && input.action_is_reversible {
         controls.push("enforce allowlist, expiry, blast-radius ceiling, and audit event".into());
         predicates.push("allowed-action".into());
-        return PolicyDecision {
+        let mut result = PolicyDecision {
             decision: Decision::AllowedStagedAction,
             reasons: vec!["evidence is complete and requested action is reversible".into()],
             required_controls: controls,
             metta_predicates: predicates,
+            metta_execution: "pending".into(),
+            metta_files: Vec::new(),
         };
+        attach_metta(&mut result, input);
+        return result;
     }
 
-    PolicyDecision {
+    let mut result = PolicyDecision {
         decision: Decision::Reviewable,
         reasons: vec!["evidence is complete and no high-impact action was requested".into()],
         required_controls: controls,
         metta_predicates: predicates,
+        metta_execution: "pending".into(),
+        metta_files: Vec::new(),
+    };
+    attach_metta(&mut result, input);
+    result
+}
+
+fn attach_metta(result: &mut PolicyDecision, input: &PolicyInput) {
+    let root = std::env::var("OMEGACLAW_METTA_ROOT").unwrap_or_else(|_| "metta".into());
+    match crate::metta_runtime::MettaRuntime::new(root).evaluate(input) {
+        Ok(evaluation) => {
+            result.metta_execution = "hyperon_in_process".into();
+            result.metta_files = evaluation.loaded_files;
+            for predicate in evaluation.predicates {
+                if !result.metta_predicates.contains(&predicate) {
+                    result.metta_predicates.push(predicate);
+                }
+            }
+        }
+        Err(error) => {
+            result.metta_execution = format!("hyperon_error:{error}");
+        }
     }
 }
 
