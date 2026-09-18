@@ -13,6 +13,8 @@
 - Inspectable MeTTa rules for evidence completeness, scope drift, authority review, and reversible actions.
 - HTML5/TypeScript review console with active investigations, evidence trail, confidence separation, and safe next steps.
 - Server-side adapter boundaries for Dify, Gemini, and Hugging Face. Credentials are read from environment variables only; no provider calls are enabled until request logging, redaction, tenant budgets, retries, and approval controls are added.
+- A full `omegaclaw-agent` CLI plugin with repository inspection, defensive file analysis, an allowlisted check runner, structured decisions, and audit-event hashes.
+- A real provider execution path for Gemini Interactions API, Dify blocking workflows, and Hugging Face OpenAI-compatible chat inference. Provider output is still untrusted and remains human-gated.
 
 ## Architecture
 
@@ -48,6 +50,16 @@ cargo run
 
 Open `http://localhost:8080`.
 
+Run the developer agent:
+
+```bash
+cargo run --bin omegaclaw-agent -- --workspace . --provider offline inspect
+cargo run --bin omegaclaw-agent -- --workspace . --provider offline analyze src/providers.rs
+OMEGACLAW_ALLOW_COMMANDS=true cargo run --bin omegaclaw-agent -- --workspace . check rust-test
+```
+
+Use `--provider gemini`, `--provider dify`, or `--provider huggingface` only after configuring the corresponding server-side credentials. The agent never exposes provider keys to the frontend.
+
 Useful endpoints:
 
 - `GET /api/health`
@@ -75,10 +87,10 @@ curl -X POST http://localhost:8080/api/cases \\
 Copy `.env.example` to a local environment file. Never commit credentials.
 
 - **Dify** is the traditional workflow/ML orchestration boundary. Configure `DIFY_API_URL` and `DIFY_API_KEY`.
-- **Gemini** is an optional reasoning provider for bounded hypothesis generation. Configure `GEMINI_API_KEY` and optionally `GEMINI_MODEL`.
-- **Hugging Face** is an optional inference provider for self-selected open models. Configure `HUGGINGFACE_API_TOKEN` and optionally `HUGGINGFACE_MODEL`.
+- **Gemini** is an optional reasoning provider for bounded hypothesis generation. The client uses the official Interactions API with structured JSON output. Configure `GEMINI_API_KEY`, optionally `GEMINI_MODEL`, and keep the key in a server-side secret manager.
+- **Hugging Face** is an optional inference provider for self-selected open models. Configure `HUGGINGFACE_API_TOKEN`, optionally `HUGGINGFACE_MODEL`, and optionally `HUGGINGFACE_API_URL`.
 
-The current MVP only reports whether each adapter is configured. Before enabling network inference, add tenant isolation, redaction, request/response provenance, rate limits, retry policy, model pinning, prompt-injection defenses, and evaluation against the OmegaClaw case ledger.
+Before enabling network inference in production, add tenant isolation, redaction, request/response provenance, rate limits, retry policy, model pinning, prompt-injection defenses, provider health checks, and evaluation against the OmegaClaw case ledger.
 
 ## MeTTa
 
