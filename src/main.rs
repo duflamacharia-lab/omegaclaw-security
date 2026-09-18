@@ -1,5 +1,6 @@
 use axum::{extract::State, http::StatusCode, response::IntoResponse, routing::get, Json, Router};
 use chrono::{DateTime, Utc};
+use omegaclaw::policy::{evaluate, Decision, PolicyInput};
 use reqwest::Client;
 use serde::{Deserialize, Serialize};
 use std::{
@@ -91,36 +92,25 @@ fn provider_status() -> ProviderStatus {
 }
 
 fn evaluate_policy(case: &CreateCase) -> PolicyResult {
-    let mut reasons = vec![];
-    let mut next_steps = vec![
-        "Attach a reproducible trace or test artifact".into(),
-        "Obtain accountable human review before any high-impact action".into(),
-    ];
-    let high_impact = matches!(case.severity.to_lowercase().as_str(), "critical" | "high");
-    if case.evidence.is_empty() {
-        reasons.push("No evidence attached; system must abstain".into());
-        return PolicyResult {
-            decision: "abstain".into(),
-            reasons,
-            next_steps,
-        };
-    }
-    if high_impact {
-        reasons.push("High-impact case requires simulation and approval quorum".into());
-        next_steps.push("Run local-fork simulation and verify post-state".into());
-        next_steps.push("Route proposed action to multisig or security owner".into());
-        return PolicyResult {
-            decision: "human_review_required".into(),
-            reasons,
-            next_steps,
-        };
-    }
-    reasons.push("Evidence is present and impact is bounded".into());
-    next_steps.push("Create a staged test or policy diff".into());
+    let decision = evaluate(&PolicyInput {
+        severity: case.severity.clone(),
+        has_asset_identity: !case.asset.id.is_empty() && !case.asset.address.is_empty(),
+        has_source_snapshot: !case.asset.source_commit.is_empty(),
+        has_deployment_snapshot: case.asset.block_snapshot > 0,
+        evidence_count: case.evidence.len(),
+        evidence_is_reproducible: case.evidence.iter().all(|e| e.artifact_uri.is_some()),
+        ..Default::default()
+    });
+    let decision_name = match decision.decision {
+        Decision::Abstain => "abstain",
+        Decision::HumanReviewRequired => "human_review_required",
+        Decision::AllowedStagedAction => "allowed_staged_action",
+        Decision::Reviewable => "reviewable",
+    };
     PolicyResult {
-        decision: "reviewable".into(),
-        reasons,
-        next_steps,
+        decision: decision_name.into(),
+        reasons: decision.reasons,
+        next_steps: decision.required_controls,
     }
 }
 
@@ -285,7 +275,7 @@ mod tests {
                 source: "foundry".into(),
                 summary: "reproduced".into(),
                 confidence: 0.9,
-                artifact_uri: None,
+                artifact_uri: Some("artifacts/test-reproduction.json".into()),
             }],
             recommended_action: None,
         };

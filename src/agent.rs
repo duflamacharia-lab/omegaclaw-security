@@ -1,9 +1,10 @@
 use crate::providers::{configured_provider, ProviderRequest};
+use crate::tool_runner::{ToolRequest, ToolRunner, ToolRunnerConfig};
 use chrono::{DateTime, Utc};
 use serde::{Deserialize, Serialize};
 use serde_json::{json, Value};
 use sha2::{Digest, Sha256};
-use std::{path::PathBuf, process::Command, sync::Arc};
+use std::{path::PathBuf, sync::Arc};
 use tokio::fs;
 use uuid::Uuid;
 
@@ -121,28 +122,26 @@ impl OmegaClawAgent {
         Ok(result)
     }
     pub async fn run_safe_check(&self, check: &str) -> anyhow::Result<Value> {
-        if !self.config.allow_commands {
-            anyhow::bail!("command execution disabled; set OMEGACLAW_ALLOW_COMMANDS=true in a trusted workspace")
-        }
-        let (program, args): (&str, &[&str]) = match check {
-            "rust-test" => ("cargo", &["test"]),
-            "rust-format" => ("cargo", &["fmt", "--all", "--", "--check"]),
-            "frontend-build" => ("npm", &["run", "build"]),
-            _ => anyhow::bail!("unsupported check: {check}"),
+        let tool = match check {
+            "rust-test" => "cargo-test",
+            "rust-format" => "cargo-format",
+            "frontend-build" => "frontend-build",
+            other => anyhow::bail!("unsupported check: {other}"),
         };
-        let output = Command::new(program)
-            .args(args)
-            .current_dir(&self.config.workspace)
-            .output()?;
-        let stdout = truncate(
-            &String::from_utf8_lossy(&output.stdout),
-            self.config.max_output_bytes,
-        );
-        let stderr = truncate(
-            &String::from_utf8_lossy(&output.stderr),
-            self.config.max_output_bytes,
-        );
-        let result = json!({"check":check,"success":output.status.success(),"stdout":stdout,"stderr":stderr,"exit_code":output.status.code()});
+        let runner = ToolRunner::new(ToolRunnerConfig {
+            workspace: self.config.workspace.clone(),
+            max_output_bytes: self.config.max_output_bytes,
+            timeout_seconds: 300,
+            allow_commands: self.config.allow_commands,
+        });
+        let result = serde_json::to_value(
+            runner
+                .run(ToolRequest {
+                    tool: tool.into(),
+                    args: vec![],
+                })
+                .await?,
+        )?;
         self.record("run_safe_check", &result, &result).await;
         Ok(result)
     }
