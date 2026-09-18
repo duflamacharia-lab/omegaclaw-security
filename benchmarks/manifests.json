@@ -1,0 +1,105 @@
+{
+  "schema_version": "1",
+  "artifacts": [
+    {
+      "id": "dvd-v4.1.0",
+      "name": "Damn Vulnerable DeFi v4.1.0",
+      "role": "evaluation_only",
+      "source_url": "https://github.com/theredguild/damn-vulnerable-defi",
+      "revision": "64fddf9f96de2782f8868898d68673acb295119c",
+      "license": "MIT; dependencies require separate review",
+      "attribution": "The Red Guild",
+      "hash_scope": "source_descriptor_pending_content",
+      "sha256": "ab3af18d046e8ec6407f985472b85bb84842b61582b4d34a4ea55df18490c2d6",
+      "content_kind": "solidity_ctf",
+      "network_required": false,
+      "executable_content": true,
+      "solution_material_separated": true,
+      "safety_notes": [
+        "local EVM only",
+        "deny network egress",
+        "no real keys or funds"
+      ]
+    },
+    {
+      "id": "ethernaut-official",
+      "name": "OpenZeppelin Ethernaut",
+      "role": "evaluation_only",
+      "source_url": "https://github.com/OpenZeppelin/ethernaut",
+      "revision": "d05643a40aa98c45d66247c69ffceab8f44dd8cb",
+      "license": "AGPL-3.0; embedded assets and dependencies require review",
+      "attribution": "OpenZeppelin",
+      "hash_scope": "source_descriptor_pending_content",
+      "sha256": "4ac81a5a8f843694eb95339cad755e540adfc51d01abb759cfae5ce817f2b285",
+      "content_kind": "solidity_ctf",
+      "network_required": false,
+      "executable_content": true,
+      "solution_material_separated": true,
+      "safety_notes": [
+        "local EVM only",
+        "do not deploy to public networks",
+        "hold out community solutions"
+      ]
+    },
+    {
+      "id": "cybernative-code-vulnerability-security-dpo",
+      "name": "CyberNative Code Vulnerability Security DPO",
+      "role": "training_candidate",
+      "source_url": "https://huggingface.co/datasets/CyberNative/Code_Vulnerability_Security_DPO",
+      "revision": "review-required-immutable-revision",
+      "license": "Apache-2.0 as declared by dataset card; upstream rights require review",
+      "attribution": "CyberNative",
+      "hash_scope": "source_descriptor_pending_content",
+      "sha256": "2a1f50e1115d8e6cd4c6f8a0df6262c5da2bb99bdbc0e7d9cdc1343a72c17d1f",
+      "content_kind": "security_preference_pairs",
+      "network_required": false,
+      "executable_content": false,
+      "solution_material_separated": true,
+      "safety_notes": [
+        "validate fixes",
+        "deduplicate against held-out evaluation data",
+        "quarantine prompt-like rows"
+      ]
+    },
+    {
+      "id": "polymarket-readonly-fixtures",
+      "name": "Polymarket read-only API and event fixtures",
+      "role": "read_only_fixture",
+      "source_url": "https://docs.polymarket.com/",
+      "revision": "docs-reviewed-2026-09-18",
+      "license": "Source-specific terms; verify before redistribution",
+      "attribution": "Polymarket documentation",
+      "hash_scope": "source_descriptor_pending_content",
+      "sha256": "8e026972a5e047bb0f4dad0eb8ed9a57d420c0375ed9773a09d0bd352bd080e5",
+      "content_kind": "api_schema_event_fixture",
+      "network_required": false,
+      "executable_content": false,
+      "solution_material_separated": true,
+      "safety_notes": [
+        "mocked endpoints only",
+        "never submit orders",
+        "no wallet keys"
+      ]
+    },
+    {
+      "id": "l3-defi-architecture-fixtures",
+      "name": "L3 DeFi architecture risk fixtures",
+      "role": "read_only_fixture",
+      "source_url": "https://docs.arbitrum.io/launch-orbit-chain/a-gentle-introduction",
+      "revision": "docs-reviewed-2026-09-18",
+      "license": "Source-specific terms; verify before redistribution",
+      "attribution": "Arbitrum and ZKsync official documentation",
+      "hash_scope": "source_descriptor_pending_content",
+      "sha256": "ffa0231b28a0ba42aa4fbb84a79e20d19436cc0e4ff9ca1f94d9726c7a95057f",
+      "content_kind": "architecture_risk_fixture",
+      "network_required": false,
+      "executable_content": false,
+      "solution_material_separated": true,
+      "safety_notes": [
+        "synthetic cases",
+        "no live chain scans",
+        "no transaction broadcasting"
+      ]
+    }
+  ]
+}

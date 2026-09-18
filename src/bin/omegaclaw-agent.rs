@@ -1,5 +1,10 @@
 use clap::{Parser, Subcommand};
-use omegaclaw::agent::{AgentConfig, OmegaClawAgent};
+use omegaclaw::{
+    agent::{AgentConfig, OmegaClawAgent},
+    manifest::ArtifactManifest,
+};
+use serde::Deserialize;
+use std::fs;
 use std::path::PathBuf;
 
 #[derive(Parser, Debug)]
@@ -32,6 +37,10 @@ enum Command {
         name: String,
     },
     Audit,
+    ValidateManifests {
+        #[arg(long, default_value = "benchmarks/manifests.json")]
+        path: PathBuf,
+    },
 }
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
@@ -55,6 +64,17 @@ async fn main() -> anyhow::Result<()> {
         Command::Audit => {
             let events = agent.audit_events().await;
             println!("{}", serde_json::to_string_pretty(&events)?);
+        }
+        Command::ValidateManifests { path } => {
+            #[derive(Deserialize)]
+            struct Catalog {
+                artifacts: Vec<ArtifactManifest>,
+            }
+            let catalog: Catalog = serde_json::from_str(&fs::read_to_string(path)?)?;
+            for artifact in &catalog.artifacts {
+                artifact.validate().map_err(anyhow::Error::msg)?;
+            }
+            println!("validated {} artifact manifests", catalog.artifacts.len());
         }
     }
     Ok(())

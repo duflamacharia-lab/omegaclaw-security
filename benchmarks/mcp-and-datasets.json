@@ -1,0 +1,18 @@
+{
+  "schema_version": "1",
+  "mcp": {
+    "status": "fixture_contract_only",
+    "servers": [
+      {"id":"repo-reader","transport":"stdio","capabilities":["read_file","list_files"],"network":false,"write":false,"allowlist":["workspace"]},
+      {"id":"hf-metadata","transport":"connector","capabilities":["repo_details","dataset_card"],"network":true,"write":false,"allowlist":["huggingface.co"]},
+      {"id":"benchmark-reader","transport":"stdio","capabilities":["read_manifest","read_fixture"],"network":false,"write":false,"allowlist":["benchmarks"]},
+      {"id":"analysis-results","transport":"stdio","capabilities":["read_sarif","read_json"],"network":false,"write":false,"allowlist":["artifacts"]}
+    ],
+    "required_controls":["schema validation","workspace containment","provenance tags","timeout","output-size limit","prompt-injection isolation","audit event","human approval for network or write tools"]
+  },
+  "datasets": [
+    {"id":"cybernative-dpo","repo":"CyberNative/Code_Vulnerability_Security_DPO","role":"training_candidate","license":"Apache-2.0 declared; verify upstream rights","status":"quarantine_pending_revision_and_hash","executable_content":false},
+    {"id":"seceval","repo":"XuanwuAI/SecEval","role":"evaluation_only","license":"CC BY-NC-SA 4.0","status":"held_out_no_training","executable_content":false},
+    {"id":"cybersecurityqaa","repo":"Rowden/CybersecurityQAA","role":"evaluation_only","license":"MIT declared; verify upstream rights","status":"held_out_provenance_review","executable_content":false}
+  ]
+}
