@@ -1,5 +1,5 @@
 use crate::providers::{configured_provider, ProviderRequest};
-use crate::tool_runner::{ToolRequest, ToolRunner, ToolRunnerConfig};
+use crate::tool_runner::{ToolRequest, ToolRunner, ToolRunnerConfig, WorkerMode};
 use chrono::{DateTime, Utc};
 use serde::{Deserialize, Serialize};
 use serde_json::{json, Value};
@@ -133,6 +133,16 @@ impl OmegaClawAgent {
             max_output_bytes: self.config.max_output_bytes,
             timeout_seconds: 300,
             allow_commands: self.config.allow_commands,
+            mode: if std::env::var("OMEGACLAW_WORKER_MODE")
+                .map(|v| v.eq_ignore_ascii_case("docker"))
+                .unwrap_or(false)
+            {
+                WorkerMode::Docker
+            } else {
+                WorkerMode::Native
+            },
+            docker_network: std::env::var("OMEGACLAW_DOCKER_NETWORK")
+                .unwrap_or_else(|_| "none".into()),
         });
         let result = serde_json::to_value(
             runner

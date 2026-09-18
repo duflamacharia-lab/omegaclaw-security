@@ -5,11 +5,19 @@ use std::{path::PathBuf, process::Stdio, time::Duration};
 use tokio::{fs, process::Command, time::timeout};
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
+pub enum WorkerMode {
+    Native,
+    Docker,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct ToolRunnerConfig {
     pub workspace: PathBuf,
     pub max_output_bytes: usize,
     pub timeout_seconds: u64,
     pub allow_commands: bool,
+    pub mode: WorkerMode,
+    pub docker_network: String,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -28,6 +36,7 @@ pub struct ToolResult {
     pub stderr: String,
     pub timed_out: bool,
     pub input_sha256: String,
+    pub execution_mode: WorkerMode,
 }
 
 #[derive(Debug, thiserror::Error)]
@@ -51,35 +60,75 @@ impl ToolRunner {
     pub fn new(config: ToolRunnerConfig) -> Self {
         Self { config }
     }
-
     pub async fn run(&self, request: ToolRequest) -> Result<ToolResult, ToolError> {
         if !self.config.allow_commands {
             return Err(ToolError::Disabled);
         }
-        let (program, permitted_args): (&str, Vec<String>) = match request.tool.as_str() {
-            "cargo-test" => ("cargo", vec!["test".into(), "--all-targets".into()]),
+        let (program, base_args, docker_image) = match request.tool.as_str() {
+            "cargo-test" => ("cargo", vec!["test".into(), "--all-targets".into()], None),
             "cargo-format" => (
                 "cargo",
                 vec!["fmt".into(), "--all".into(), "--".into(), "--check".into()],
+                None,
             ),
-            "frontend-build" => ("npm", vec!["run".into(), "build".into()]),
-            "slither" => ("slither", vec![]),
-            "forge-test" => ("forge", vec!["test".into()]),
-            "echidna" => ("echidna-test", vec![]),
+            "frontend-build" => ("npm", vec!["run".into(), "build".into()], None),
+            "slither" => (
+                "slither",
+                Vec::new(),
+                Some("trailofbits/eth-security-toolbox"),
+            ),
+            "forge-test" => (
+                "forge",
+                vec!["test".into()],
+                Some("ghcr.io/foundry-rs/foundry:latest"),
+            ),
+            "echidna" => (
+                "echidna",
+                Vec::new(),
+                Some("ghcr.io/crytic/echidna/echidna:latest"),
+            ),
             other => return Err(ToolError::Unsupported(other.into())),
         };
         if request.args.iter().any(|arg| {
-            arg.starts_with('-') || arg.contains(";") || arg.contains("&&") || arg.contains("|")
+            arg.starts_with('-')
+                || arg.contains(';')
+                || arg.contains("&&")
+                || arg.contains('|')
+                || arg.contains('$')
         }) {
             return Err(ToolError::InvalidArguments);
         }
-        let mut args = permitted_args;
+        let mut args = base_args;
         args.extend(request.args.clone());
         let input_sha256 = sha256(
             &serde_json::to_string(&json!({"tool":request.tool,"args":args})).unwrap_or_default(),
         );
-        let child = Command::new(program)
-            .args(&args)
+        let (program, final_args, mode): (String, Vec<String>, WorkerMode) =
+            match (&self.config.mode, docker_image) {
+                (WorkerMode::Docker, Some(image)) => {
+                    let mut docker_args = vec![
+                        "run".into(),
+                        "--rm".into(),
+                        "--network".into(),
+                        self.config.docker_network.clone(),
+                        "--read-only".into(),
+                        "--cap-drop=ALL".into(),
+                        "--security-opt".into(),
+                        "no-new-privileges".into(),
+                        "-v".into(),
+                        format!("{}:/src:ro", self.config.workspace.display()),
+                        image.into(),
+                        "bash".into(),
+                        "-lc".into(),
+                    ];
+                    let command = format!("cd /src && {} {}", program, shell_join(&args));
+                    docker_args.push(command);
+                    ("docker".into(), docker_args, WorkerMode::Docker)
+                }
+                _ => (program.to_string(), args.clone(), WorkerMode::Native),
+            };
+        let child = Command::new(&program)
+            .args(&final_args)
             .current_dir(&self.config.workspace)
             .stdin(Stdio::null())
             .stdout(Stdio::piped())
@@ -109,6 +158,7 @@ impl ToolRunner {
                     ),
                     timed_out: false,
                     input_sha256,
+                    execution_mode: mode,
                 }
             }
             Err(_) => ToolResult {
@@ -120,11 +170,11 @@ impl ToolRunner {
                 stderr: "tool execution timed out".into(),
                 timed_out: true,
                 input_sha256,
+                execution_mode: mode,
             },
         };
         Ok(result)
     }
-
     pub async fn read_workspace_file(
         &self,
         relative_path: &str,
@@ -146,7 +196,12 @@ impl ToolRunner {
         )
     }
 }
-
+fn shell_join(args: &[String]) -> String {
+    args.iter()
+        .map(|arg| format!("'{}'", arg.replace('\'', "'\\''")))
+        .collect::<Vec<_>>()
+        .join(" ")
+}
 fn truncate(value: &str, max: usize) -> String {
     value.chars().take(max).collect()
 }
@@ -159,16 +214,20 @@ fn sha256(value: &str) -> String {
 #[cfg(test)]
 mod tests {
     use super::*;
-    #[tokio::test]
-    async fn disabled_runner_fails_closed() {
-        let runner = ToolRunner::new(ToolRunnerConfig {
+    fn config(allow: bool) -> ToolRunnerConfig {
+        ToolRunnerConfig {
             workspace: std::env::current_dir().unwrap(),
             max_output_bytes: 1000,
             timeout_seconds: 1,
-            allow_commands: false,
-        });
+            allow_commands: allow,
+            mode: WorkerMode::Native,
+            docker_network: "none".into(),
+        }
+    }
+    #[tokio::test]
+    async fn disabled_runner_fails_closed() {
         assert!(matches!(
-            runner
+            ToolRunner::new(config(false))
                 .run(ToolRequest {
                     tool: "cargo-test".into(),
                     args: vec![]
@@ -178,21 +237,19 @@ mod tests {
         ));
     }
     #[tokio::test]
-    async fn command_injection_arguments_are_rejected() {
-        let runner = ToolRunner::new(ToolRunnerConfig {
-            workspace: std::env::current_dir().unwrap(),
-            max_output_bytes: 1000,
-            timeout_seconds: 1,
-            allow_commands: true,
-        });
+    async fn injection_is_rejected() {
         assert!(matches!(
-            runner
+            ToolRunner::new(config(true))
                 .run(ToolRequest {
-                    tool: "cargo-test".into(),
+                    tool: "slither".into(),
                     args: vec!["; rm -rf /".into()]
                 })
                 .await,
             Err(ToolError::InvalidArguments)
         ));
+    }
+    #[test]
+    fn shell_join_quotes() {
+        assert_eq!(shell_join(&["x y".into()]), "'x y'");
     }
 }

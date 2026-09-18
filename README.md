@@ -15,6 +15,9 @@
 - Server-side adapter boundaries for Dify, Gemini, and Hugging Face. Credentials are read from environment variables only; no provider calls are enabled until request logging, redaction, tenant budgets, retries, and approval controls are added.
 - A full `omegaclaw-agent` CLI plugin with repository inspection, defensive file analysis, an allowlisted check runner, structured decisions, and audit-event hashes.
 - A real provider execution path for Gemini Interactions API, Dify blocking workflows, and Hugging Face OpenAI-compatible chat inference. Provider output is still untrusted and remains human-gated.
+- SQLite-backed persistent Case Files, asset identities, evidence records, policy JSON, and append-only audit events.
+- A Rust policy adapter that emits the same conservative predicates represented in the MeTTa policy files.
+- Isolated Slither, Foundry, and Echidna worker jobs with native execution or Docker mode (`OMEGACLAW_WORKER_MODE=docker`); Docker mode uses a read-only workspace, dropped Linux capabilities, no network by default, and no-new-privileges.
 
 ## Architecture
 
@@ -59,6 +62,8 @@ OMEGACLAW_ALLOW_COMMANDS=true cargo run --bin omegaclaw-agent -- --workspace . c
 ```
 
 Use `--provider gemini`, `--provider dify`, or `--provider huggingface` only after configuring the corresponding server-side credentials. The agent never exposes provider keys to the frontend.
+
+The API persists to `OMEGACLAW_DB_PATH` (default `omegaclaw.sqlite3`) and runs migrations at startup. The worker runner supports `slither`, `forge-test`, and `echidna` in addition to Rust/frontend checks. Native tools must already be installed; Docker mode uses the official security-tool images when Docker is available. If a worker is unavailable, OmegaClaw records an unavailable/error result rather than treating the check as passed.
 
 Useful endpoints:
 
