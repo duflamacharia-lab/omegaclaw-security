@@ -6,6 +6,14 @@ OmegaClaw is a Rust/Axum defensive Web3 security control plane with a TypeScript
 
 The latest implementation also contains versioned benchmark manifests, synthetic Polymarket and L3 fixtures, Hugging Face dataset qualification metadata, a read-only MCP fixture contract, and a CLI manifest validator.
 
+## Security developer role
+
+The handoff owner should be a **security developer** responsible for secure smart-contract review, CTF benchmark design, threat modeling, provenance and license review, worker isolation, and safe LLM evaluation. This role owns the boundary between defensive analysis and operational exploitation. It must keep CTF execution local and authorized, require human approval for network or write actions, review every dataset before training use, and preserve the Rust/Hyperon policy engine as the authoritative control layer.
+
+The first acceptance milestone is one reproducible CTF success in a pinned local fixture. The success record must include the challenge revision, source hash, local-chain/toolchain version, command or test used, flag/result hash, and an audit event. It must not include a live wallet, live RPC, or third-party target.
+
+That milestone is now complete for the local DVD Side Entrance challenge. The result is recorded in `benchmarks/results/dvd-side-entrance-local.json`: the pinned revision passed with Foundry 1.8.3 and Solidity 0.8.25 in an offline disposable workspace. The solver test is not part of the production runtime.
+
 ## Verified commands
 
 ```bash
@@ -49,6 +57,12 @@ Polymarket and L3 material is read-only synthetic fixture data. No live credenti
 5. Add benchmark scoring and MeTTa/Rust parity tests while keeping solutions and flags outside training.
 6. Use Soup separately on Kaggle or Colab only after the corpus and held-out evaluation split are frozen.
 7. Add Telegram as notifications and human approval only; never as an autonomous command channel.
+
+## Dify boundary
+
+Dify should initially be used as the dataset and workflow orchestration layer: ingest approved examples into a knowledge base, retrieve evidence for an OmegaClaw review workflow, and evaluate structured outputs against held-out fixtures. Dataset presence alone does not prove that the connected Dify deployment supports weight fine-tuning. Actual model training requires a supported fine-tuning provider, dataset schema, resource budget, and an explicit evaluation gate. The LLM remains advisory; Rust and Hyperon remain authoritative.
+
+The current session configuration contains a Dify connector, but it is **disabled**. Before Dify work begins, the connector must be enabled and its API/workflow capability verified. OmegaClaw currently has qualified dataset candidates and manifests, not a finalized training dataset: CyberNative is still quarantine-pending, while SecEval and CybersecurityQAA are held out.
 
 ## Security review focus
 

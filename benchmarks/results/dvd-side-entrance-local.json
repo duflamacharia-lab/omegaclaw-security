@@ -1,0 +1,29 @@
+{
+  "schema_version": "1",
+  "benchmark_id": "dvd-side-entrance-local",
+  "corpus": "Damn Vulnerable DeFi",
+  "corpus_revision": "64fddf9f96de2782f8868898d68673acb295119c",
+  "challenge": "side-entrance",
+  "execution": {
+    "network": "local_anvil_forge_vm",
+    "network_egress": false,
+    "solidity": "0.8.25+commit.b61c2a91",
+    "foundry": "forge 1.8.3",
+    "test": "test/side-entrance/Solver.t.sol::SideEntranceSolverTest::test_local_ctf_flag",
+    "result": "passed"
+  },
+  "flag": "OMEGACLAW_CTF_FLAG=DVD-SIDE-ENTRANCE-LOCAL-SOLVED",
+  "artifact_sha256": {
+    "solver_test": "87a09ed3a077f3198cc8f7739609b25a7e378e82a7fad2a06c790d6c1c4802cb",
+    "official_test": "8c15795c09005721cae0c99eedae1a7787ce00ab56b265e07fc7d28fa5e46600",
+    "challenge_contract": "8ead566ca084683384e33894e825ca81470ba4e69698b7e9928727de1d18f03c",
+    "foundry_config": "ceb6b64403dca98e10331d45db993e0b0026da3816bf7df09c1c378ce429620f"
+  },
+  "safety": [
+    "temporary disposable workspace",
+    "no live RPC",
+    "no real wallet or funds",
+    "no public-chain deployment",
+    "solver test excluded from OmegaClaw production runtime"
+  ]
+}
