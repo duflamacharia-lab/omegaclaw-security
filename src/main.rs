@@ -1,0 +1,298 @@
+use axum::{extract::State, http::StatusCode, response::IntoResponse, routing::get, Json, Router};
+use chrono::{DateTime, Utc};
+use reqwest::Client;
+use serde::{Deserialize, Serialize};
+use std::{
+    net::SocketAddr,
+    sync::{Arc, RwLock},
+};
+use tower_http::{cors::CorsLayer, services::ServeDir, trace::TraceLayer};
+use tracing::info;
+use uuid::Uuid;
+
+mod providers;
+
+#[derive(Clone)]
+struct AppState {
+    cases: Arc<RwLock<Vec<CaseFile>>>,
+    client: Client,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+struct Asset {
+    id: String,
+    name: String,
+    chain: String,
+    address: String,
+    source_commit: String,
+    block_snapshot: u64,
+    authority_summary: String,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+struct Evidence {
+    kind: String,
+    source: String,
+    summary: String,
+    confidence: f32,
+    artifact_uri: Option<String>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+struct CaseFile {
+    id: Uuid,
+    title: String,
+    severity: String,
+    status: String,
+    asset: Asset,
+    finding_confidence: f32,
+    impact_confidence: f32,
+    evidence: Vec<Evidence>,
+    recommended_action: String,
+    policy_decision: String,
+    created_at: DateTime<Utc>,
+    updated_at: DateTime<Utc>,
+}
+
+#[derive(Debug, Deserialize)]
+struct CreateCase {
+    title: String,
+    severity: String,
+    asset: Asset,
+    evidence: Vec<Evidence>,
+    recommended_action: Option<String>,
+}
+
+#[derive(Debug, Serialize)]
+struct Health {
+    service: &'static str,
+    status: &'static str,
+    providers: ProviderStatus,
+}
+
+#[derive(Debug, Serialize)]
+struct ProviderStatus {
+    dify: bool,
+    gemini: bool,
+    huggingface: bool,
+}
+
+#[derive(Debug, Serialize)]
+struct PolicyResult {
+    decision: String,
+    reasons: Vec<String>,
+    next_steps: Vec<String>,
+}
+
+fn provider_status() -> ProviderStatus {
+    ProviderStatus {
+        dify: std::env::var("DIFY_API_URL").is_ok(),
+        gemini: std::env::var("GEMINI_API_KEY").is_ok(),
+        huggingface: std::env::var("HUGGINGFACE_API_TOKEN").is_ok(),
+    }
+}
+
+fn evaluate_policy(case: &CreateCase) -> PolicyResult {
+    let mut reasons = vec![];
+    let mut next_steps = vec![
+        "Attach a reproducible trace or test artifact".into(),
+        "Obtain accountable human review before any high-impact action".into(),
+    ];
+    let high_impact = matches!(case.severity.to_lowercase().as_str(), "critical" | "high");
+    if case.evidence.is_empty() {
+        reasons.push("No evidence attached; system must abstain".into());
+        return PolicyResult {
+            decision: "abstain".into(),
+            reasons,
+            next_steps,
+        };
+    }
+    if high_impact {
+        reasons.push("High-impact case requires simulation and approval quorum".into());
+        next_steps.push("Run local-fork simulation and verify post-state".into());
+        next_steps.push("Route proposed action to multisig or security owner".into());
+        return PolicyResult {
+            decision: "human_review_required".into(),
+            reasons,
+            next_steps,
+        };
+    }
+    reasons.push("Evidence is present and impact is bounded".into());
+    next_steps.push("Create a staged test or policy diff".into());
+    PolicyResult {
+        decision: "reviewable".into(),
+        reasons,
+        next_steps,
+    }
+}
+
+async fn health() -> impl IntoResponse {
+    Json(Health {
+        service: "omegaclaw-api",
+        status: "ok",
+        providers: provider_status(),
+    })
+}
+
+async fn list_cases(State(state): State<AppState>) -> impl IntoResponse {
+    let cases = state.cases.read().unwrap().clone();
+    Json(cases)
+}
+
+async fn create_case(
+    State(state): State<AppState>,
+    Json(input): Json<CreateCase>,
+) -> impl IntoResponse {
+    let policy = evaluate_policy(&input);
+    let now = Utc::now();
+    let case = CaseFile {
+        id: Uuid::new_v4(),
+        title: input.title,
+        severity: input.severity,
+        status: "open".into(),
+        asset: input.asset,
+        finding_confidence: input
+            .evidence
+            .iter()
+            .map(|e| e.confidence)
+            .fold(0.0, f32::max),
+        impact_confidence: 0.0,
+        evidence: input.evidence,
+        recommended_action: input
+            .recommended_action
+            .unwrap_or_else(|| "Investigate and verify before action".into()),
+        policy_decision: policy.decision,
+        created_at: now,
+        updated_at: now,
+    };
+    state.cases.write().unwrap().push(case.clone());
+    (StatusCode::CREATED, Json(case))
+}
+
+async fn case_policy(
+    State(state): State<AppState>,
+    axum::extract::Path(id): axum::extract::Path<Uuid>,
+) -> impl IntoResponse {
+    let found = state
+        .cases
+        .read()
+        .unwrap()
+        .iter()
+        .find(|c| c.id == id)
+        .cloned();
+    match found { Some(c) => (StatusCode::OK, Json(serde_json::json!({"case_id": c.id, "decision": c.policy_decision, "reasons": ["Decision generated by explicit policy rules; MeTTa rules are the source of truth for the next reasoning module."], "next_steps": ["Verify evidence", "Review authority and scope", "Simulate before staging action"]}))).into_response(), None => StatusCode::NOT_FOUND.into_response() }
+}
+
+async fn provider_probe(State(state): State<AppState>) -> impl IntoResponse {
+    let mut result = serde_json::json!({"dify": {"configured": false}, "gemini": {"configured": false}, "huggingface": {"configured": false}});
+    if let Ok(url) = std::env::var("DIFY_API_URL") {
+        result["dify"] =
+            serde_json::json!({"configured": true, "base_url": url, "mode": "adapter-ready"});
+    }
+    if std::env::var("GEMINI_API_KEY").is_ok() {
+        result["gemini"] = serde_json::json!({"configured": true, "mode": "adapter-ready"});
+    }
+    if std::env::var("HUGGINGFACE_API_TOKEN").is_ok() {
+        result["huggingface"] = serde_json::json!({"configured": true, "mode": "adapter-ready"});
+    }
+    let _ = &state.client;
+    Json(result)
+}
+
+#[tokio::main]
+async fn main() {
+    tracing_subscriber::fmt()
+        .with_env_filter(
+            std::env::var("RUST_LOG").unwrap_or_else(|_| "omegaclaw=info,tower_http=info".into()),
+        )
+        .init();
+    let state = AppState {
+        cases: Arc::new(RwLock::new(seed_cases())),
+        client: Client::new(),
+    };
+    let app = Router::new()
+        .route("/api/health", get(health))
+        .route("/api/cases", get(list_cases).post(create_case))
+        .route("/api/cases/:id/policy", get(case_policy))
+        .route("/api/providers", get(provider_probe))
+        .nest_service("/", ServeDir::new("frontend/dist"))
+        .layer(CorsLayer::permissive())
+        .layer(TraceLayer::new_for_http())
+        .with_state(state);
+    let port = std::env::var("PORT")
+        .ok()
+        .and_then(|v| v.parse().ok())
+        .unwrap_or(8080);
+    let addr = SocketAddr::from(([0, 0, 0, 0], port));
+    info!(%addr, "OmegaClaw API listening");
+    axum::serve(tokio::net::TcpListener::bind(addr).await.unwrap(), app)
+        .await
+        .unwrap();
+}
+
+fn seed_cases() -> Vec<CaseFile> {
+    let asset = Asset {
+        id: "asset-euler-like-vault".into(),
+        name: "Atlas Vault (staging fixture)".into(),
+        chain: "anvil".into(),
+        address: "0x1111111111111111111111111111111111111111".into(),
+        source_commit: "fixture-2026-09-18".into(),
+        block_snapshot: 19842001,
+        authority_summary: "2-of-3 security multisig; pause is staged-only".into(),
+    };
+    vec![CaseFile {
+        id: Uuid::new_v4(),
+        title: "Unexpected oracle deviation exceeds invariant threshold".into(),
+        severity: "high".into(),
+        status: "open".into(),
+        asset,
+        finding_confidence: 0.92,
+        impact_confidence: 0.71,
+        evidence: vec![Evidence {
+            kind: "runtime_alert".into(),
+            source: "forta-adapter-fixture".into(),
+            summary: "Price movement diverges from configured oracle bounds".into(),
+            confidence: 0.92,
+            artifact_uri: Some("artifacts/fixtures/oracle-deviation.json".into()),
+        }],
+        recommended_action: "Simulate a staged pause and verify dependent withdrawal paths".into(),
+        policy_decision: "human_review_required".into(),
+        created_at: Utc::now(),
+        updated_at: Utc::now(),
+    }]
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn empty_evidence_abstains() {
+        let c = CreateCase {
+            title: "x".into(),
+            severity: "low".into(),
+            asset: seed_cases()[0].asset.clone(),
+            evidence: vec![],
+            recommended_action: None,
+        };
+        assert_eq!(evaluate_policy(&c).decision, "abstain");
+    }
+    #[test]
+    fn high_impact_requires_review() {
+        let mut c = CreateCase {
+            title: "x".into(),
+            severity: "critical".into(),
+            asset: seed_cases()[0].asset.clone(),
+            evidence: vec![Evidence {
+                kind: "test".into(),
+                source: "foundry".into(),
+                summary: "reproduced".into(),
+                confidence: 0.9,
+                artifact_uri: None,
+            }],
+            recommended_action: None,
+        };
+        assert_eq!(evaluate_policy(&c).decision, "human_review_required");
+        c.severity = "low".into();
+        assert_eq!(evaluate_policy(&c).decision, "reviewable");
+    }
+}

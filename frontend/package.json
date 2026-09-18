@@ -1,0 +1,7 @@
+{
+  "name": "omegaclaw-console",
+  "private": true,
+  "type": "module",
+  "scripts": { "build": "tsc && cp src/index.html dist/index.html && cp src/styles.css dist/styles.css" },
+  "devDependencies": { "typescript": "^5.6.3" }
+}
