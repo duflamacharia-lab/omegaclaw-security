@@ -1,3 +1,4 @@
+use jsonschema::JSONSchema;
 use reqwest::{Client, StatusCode};
 use serde::{Deserialize, Serialize};
 use serde_json::{json, Value};
@@ -12,6 +13,10 @@ pub enum McpError {
     ServerNotAllowed,
     #[error("MCP tool is not allowlisted: {0}")]
     ToolNotAllowed(String),
+    #[error("MCP tool schema is invalid: {0}")]
+    InvalidToolSchema(String),
+    #[error("MCP arguments do not match the tool schema: {0}")]
+    InvalidArguments(String),
     #[error("MCP returned HTTP {0}")]
     Http(StatusCode),
     #[error("MCP request failed: {0}")]
@@ -25,7 +30,7 @@ pub struct McpTool {
     pub name: String,
     #[serde(default)]
     pub description: String,
-    #[serde(default)]
+    #[serde(rename = "inputSchema", default)]
     pub input_schema: Value,
 }
 
@@ -73,17 +78,28 @@ impl McpClient {
 
     pub async fn list_tools(&self) -> Result<Vec<McpTool>, McpError> {
         let raw = self.request("tools/list", json!({})).await?;
-        let tools = raw
-            .pointer("/result/tools")
-            .cloned()
-            .unwrap_or_else(|| json!([]));
-        serde_json::from_value(tools).map_err(|e| McpError::Protocol(e.to_string()))
+        let tools: Vec<McpTool> = serde_json::from_value(
+            raw.pointer("/result/tools")
+                .cloned()
+                .unwrap_or_else(|| json!([])),
+        )
+        .map_err(|e| McpError::Protocol(e.to_string()))?;
+        for tool in &tools {
+            validate_schema(&tool.input_schema)?;
+        }
+        Ok(tools)
     }
 
     pub async fn call(&self, call: McpCall) -> Result<Value, McpError> {
         if !self.allowed_tools.iter().any(|name| name == &call.tool) {
             return Err(McpError::ToolNotAllowed(call.tool));
         }
+        let tools = self.list_tools().await?;
+        let tool = tools
+            .iter()
+            .find(|tool| tool.name == call.tool)
+            .ok_or_else(|| McpError::ToolNotAllowed(call.tool.clone()))?;
+        validate_arguments(&tool.input_schema, &call.arguments)?;
         let raw = self
             .request(
                 "tools/call",
@@ -119,12 +135,37 @@ impl McpClient {
     }
 }
 
+pub fn validate_schema(schema: &Value) -> Result<(), McpError> {
+    if !schema.is_object() {
+        return Err(McpError::InvalidToolSchema(
+            "inputSchema must be an object".into(),
+        ));
+    }
+    JSONSchema::compile(schema)
+        .map(|_| ())
+        .map_err(|error| McpError::InvalidToolSchema(error.to_string()))
+}
+
+pub fn validate_arguments(schema: &Value, arguments: &Value) -> Result<(), McpError> {
+    validate_schema(schema)?;
+    let compiled = JSONSchema::compile(schema)
+        .map_err(|error| McpError::InvalidToolSchema(error.to_string()))?;
+    if let Err(errors) = compiled.validate(arguments) {
+        let message = errors
+            .map(|error| error.to_string())
+            .collect::<Vec<_>>()
+            .join("; ");
+        return Err(McpError::InvalidArguments(message));
+    }
+    Ok(())
+}
+
 fn is_allowed_url(url: &str) -> bool {
     let lower = url.to_ascii_lowercase();
     (lower.starts_with("https://")
         || lower.starts_with("http://127.0.0.1")
         || lower.starts_with("http://localhost"))
-        && !lower.contains("@")
+        && !lower.contains('@')
 }
 
 #[cfg(test)]
@@ -139,5 +180,11 @@ mod tests {
     fn permits_tls_or_local_fixture() {
         assert!(is_allowed_url("https://mcp.example.test"));
         assert!(is_allowed_url("http://127.0.0.1:9000/mcp"));
+    }
+    #[test]
+    fn validates_tool_arguments() {
+        let schema = json!({"type":"object","properties":{"name":{"type":"string"}},"required":["name"],"additionalProperties":false});
+        assert!(validate_arguments(&schema, &json!({"name":"fixture"})).is_ok());
+        assert!(validate_arguments(&schema, &json!({"name":1})).is_err());
     }
 }

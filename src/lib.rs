@@ -1,4 +1,5 @@
 pub mod agent;
+pub mod benchmark;
 pub mod ctf;
 pub mod manifest;
 pub mod mcp;

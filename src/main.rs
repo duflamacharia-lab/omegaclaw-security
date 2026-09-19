@@ -3,6 +3,7 @@ use chrono::{DateTime, Utc};
 use omegaclaw::policy::{evaluate, Decision, PolicyInput};
 use omegaclaw::storage::{CreateStoredCase, SqliteStore, StoredAsset, StoredEvidenceInput};
 use omegaclaw::{
+    benchmark::score_result_json,
     ctf::{plan_import, CtfImportRequest},
     mcp::{McpCall, McpClient},
 };
@@ -227,11 +228,26 @@ async fn mcp_tools(State(state): State<AppState>) -> impl IntoResponse {
 }
 
 async fn mcp_call(State(state): State<AppState>, Json(call): Json<McpCall>) -> impl IntoResponse {
+    let audit_tool = call.tool.clone();
+    let audit_args = call.arguments.clone();
     match McpClient::from_env(state.client.clone()) {
         Ok(client) => match client.call(call).await {
-            Ok(result) => Json(serde_json::json!({"ok": true, "result": result})).into_response(),
+            Ok(result) => {
+                let _ = state
+                    .store
+                    .record_mcp_call(&audit_tool, &audit_args, &Ok(result.clone()))
+                    .await;
+                Json(serde_json::json!({"ok": true, "result": result})).into_response()
+            }
             Err(error) => (
-                StatusCode::BAD_GATEWAY,
+                {
+                    let message = error.to_string();
+                    let _ = state
+                        .store
+                        .record_mcp_call(&audit_tool, &audit_args, &Err(message.clone()))
+                        .await;
+                    StatusCode::BAD_GATEWAY
+                },
                 Json(serde_json::json!({"ok": false, "error": error.to_string()})),
             )
                 .into_response(),
@@ -244,9 +260,66 @@ async fn mcp_call(State(state): State<AppState>, Json(call): Json<McpCall>) -> i
     }
 }
 
-async fn ctf_import(Json(request): Json<CtfImportRequest>) -> impl IntoResponse {
+async fn audit_events(State(state): State<AppState>) -> impl IntoResponse {
+    match state.store.list_audit_events().await {
+        Ok(events) => Json(events).into_response(),
+        Err(error) => (
+            StatusCode::INTERNAL_SERVER_ERROR,
+            Json(serde_json::json!({"error": error.to_string()})),
+        )
+            .into_response(),
+    }
+}
+
+async fn benchmark_score(Json(result): Json<serde_json::Value>) -> impl IntoResponse {
+    Json(score_result_json(&result))
+}
+
+async fn ctf_import(
+    State(state): State<AppState>,
+    Json(request): Json<CtfImportRequest>,
+) -> impl IntoResponse {
     match plan_import(request) {
-        Ok(plan) => (StatusCode::OK, Json(plan)).into_response(),
+        Ok(plan) => {
+            let case = state
+                .store
+                .insert_case(CreateStoredCase {
+                    title: format!("CTF intake: {}", plan.host),
+                    severity: "medium".into(),
+                    asset: StoredAsset {
+                        id: format!("ctf-{}", plan.host.replace('.', "-")),
+                        name: plan.host.clone(),
+                        chain: "local-fixture".into(),
+                        address: "unresolved".into(),
+                        source_commit: "intake-pending-pinned-revision".into(),
+                        compiler: None,
+                        block_snapshot: 0,
+                        authority_summary: "unresolved; human review required".into(),
+                        updated_at: Utc::now(),
+                    },
+                    evidence: vec![StoredEvidenceInput {
+                        kind: "ctf_import".into(),
+                        source: plan.source_url.clone(),
+                        summary: format!("Validated {} intake in metadata-only mode", plan.mode),
+                        confidence: 0.6,
+                        reproducible: false,
+                        artifact_uri: Some(plan.source_url.clone()),
+                    }],
+                })
+                .await;
+            match case {
+                Ok(case) => (
+                    StatusCode::CREATED,
+                    Json(serde_json::json!({"plan": plan, "case_file": case})),
+                )
+                    .into_response(),
+                Err(error) => (
+                    StatusCode::INTERNAL_SERVER_ERROR,
+                    Json(serde_json::json!({"error": error.to_string(), "plan": plan})),
+                )
+                    .into_response(),
+            }
+        }
         Err(error) => (
             StatusCode::BAD_REQUEST,
             Json(serde_json::json!({"error": error})),
@@ -277,6 +350,11 @@ async fn main() {
         .route("/api/providers", get(provider_probe))
         .route("/api/mcp/tools", get(mcp_tools))
         .route("/api/mcp/call", axum::routing::post(mcp_call))
+        .route("/api/audit/events", get(audit_events))
+        .route(
+            "/api/benchmarks/score",
+            axum::routing::post(benchmark_score),
+        )
         .route("/api/ctf/import", axum::routing::post(ctf_import))
         .nest_service("/", ServeDir::new("frontend/dist"))
         .layer(CorsLayer::permissive())

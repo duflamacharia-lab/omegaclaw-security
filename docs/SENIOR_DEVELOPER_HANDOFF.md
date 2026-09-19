@@ -20,9 +20,9 @@ That milestone is now complete for the local DVD Side Entrance challenge. The re
 
 **CTF:** yes, one local DVD Side Entrance challenge is verified. It is a local acceptance benchmark, not evidence that OmegaClaw can solve arbitrary CTFs or live targets.
 
-**SQLite:** yes, Case Files, assets, evidence, policy JSON, and audit records persist through reopening the database. Artifact-manifest and benchmark-run tables are still future work.
+**SQLite:** yes, Case Files, assets, evidence, policy JSON, and audit records persist through reopening the database. MCP calls are now persisted as sequence-numbered, hash-chained audit events. Artifact-manifest and benchmark-run tables are still future work.
 
-**MCP:** not yet as a generic OmegaClaw runtime capability. The Dify connector exposes one configured `Omegaclaw` access point, while the repository contains a read-only MCP fixture contract. A production MCP client/allowlist with schema validation, provenance, timeouts, output limits, and audit events remains to be implemented.
+**MCP:** the read-only MVP path is now proven end to end. `omegaclaw-mcp-fixture` serves a local JSON-RPC fixture; discovery validates the protocol `inputSchema`; calls validate arguments against JSON Schema; and successful or failed calls are persisted as audit events. Remote OAuth authorization, SSRF defenses, provenance persistence, and output-size limits remain production gates.
 
 **Telegram:** not implemented. The architecture can support a future notification adapter, but it must be notification-only at first and never allow a Telegram message to directly trigger a worker, transaction, trade, or credential-sensitive action.
 
@@ -63,10 +63,10 @@ Polymarket and L3 material is read-only synthetic fixture data. No live credenti
 ## Next engineering slices
 
 1. Materialize the pinned DVD and Ethernaut repositories into disposable benchmark workspaces, compute actual content hashes, and create Foundry/Anvil-only runner manifests.
-2. Add SQLite tables for artifact manifests, dataset rows, quarantine state, and benchmark runs.
+2. Add SQLite tables for artifact manifests, dataset rows, quarantine state, and benchmark runs; the current score endpoint is deterministic but not yet a persisted benchmark-run graph.
 3. Add a qualification CLI that scans secrets, executable content, license metadata, and prompt-injection indicators before model ingestion.
-4. Add read-only MCP fixture servers behind a feature flag with schema validation, workspace containment, provenance tags, and audit events.
-5. Add benchmark scoring and MeTTa/Rust parity tests while keeping solutions and flags outside training.
+4. Add remote MCP authorization, SSRF prevention, output limits, provenance tags, and negative-path integration tests. The local fixture, schema validation, and audit path are complete.
+5. Expand benchmark scoring into control coverage and MeTTa/Rust parity tests while keeping solutions and flags outside training. The first DVD result now scores 1.0 under the local, no-egress, no-live-assets gate.
 6. Use Soup separately on Kaggle or Colab only after the corpus and held-out evaluation split are frozen.
 7. Add Telegram as notifications and human approval only; never as an autonomous command channel.
 
