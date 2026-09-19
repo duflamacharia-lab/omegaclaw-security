@@ -1,0 +1,1856 @@
+{
+  "schema_version": "1",
+  "source_catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+  "resources": [
+    {
+      "id": "0147",
+      "title": "Stanford LLM Course",
+      "description": "Stanford LLM lecture series covering the science and systems of large language models.",
+      "tags": [
+        "aiml"
+      ],
+      "url": "https://www.youtube.com/watch?v=9vM4p9NN0Ts&list=PLZYX2GpWjyQ-cPuDlkVXd4HdcDBlAt-fo",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0152",
+      "title": "Machine Learning",
+      "description": "Playlist by freeCodeCamp.",
+      "tags": [
+        "aiml"
+      ],
+      "url": "https://www.youtube.com/watch?v=i_LwzRVP7bg&list=PLWKjhJtqVAblStefaz_YOVpDWqcRScc2s",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0153",
+      "title": "GuidedHacking Youtube Playlists",
+      "description": "Step-by-step tutorials from Game Hacking to Binary Exploit Development.",
+      "tags": [
+        "game",
+        "exploits",
+        "red",
+        "re"
+      ],
+      "url": "https://www.youtube.com/@GuidedHacking/playlists",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "quarantine_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0155",
+      "title": "Understanding AI from Scratch – Neural Networks Course",
+      "description": "Learn the fundamentals of Neural Networks by building one from scratch without libraries. Manually tweak network parameters to teach a car how to drive within a specially crafted playground.",
+      "tags": [
+        "aiml"
+      ],
+      "url": "https://www.youtube.com/watch?v=VgzHT9quo5c",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0156",
+      "title": "Generative AI Full Course – Gemini Pro, OpenAI, Llama, Langchain, Pinecone, Vector Databases & More",
+      "description": "Learn about generative models and different frameworks, investigating the production of text and visual material produced by artificial intelligence.",
+      "tags": [
+        "aiml"
+      ],
+      "url": "https://www.youtube.com/watch?v=mEsleV16qdo",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0157",
+      "title": "Self-Driving Car with JavaScript Course – Neural Networks and Machine Learning",
+      "description": "Learn how to create a neural network using JavaScript with no libraries. Implement every component step-by-step: car mechanics, environment, sensors, collision detection, and neural-network control.",
+      "tags": [
+        "aiml",
+        "dev"
+      ],
+      "url": "https://www.youtube.com/watch?v=Rs_rAxEsAvI",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0158",
+      "title": "TensorFlow 2.0 Complete Course - Python Neural Networks for Beginners Tutorial",
+      "description": "Full TensorFlow 2.0 tutorial course for beginners covering core learning algorithms, deep learning with neural networks, CV with CNNs, NLP with RNNs, and reinforcement learning.",
+      "tags": [
+        "aiml"
+      ],
+      "url": "https://www.youtube.com/watch?v=tPYj3fFJGjk&list=PLWKjhJtqVAblStefaz_YOVpDWqcRScc2s&index=2",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0159",
+      "title": "No Black Box Machine Learning Course – Learn Without Libraries",
+      "description": "Gain a deep understanding of machine learning systems by coding in JavaScript without relying on libraries. Demystifies the inner workings and enhances software development skills.",
+      "tags": [
+        "aiml",
+        "dev"
+      ],
+      "url": "https://www.youtube.com/watch?v=vDDjtwQDw2k&list=PLWKjhJtqVAblStefaz_YOVpDWqcRScc2s&index=4",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0160",
+      "title": "PyTorch for Deep Learning & Machine Learning – Full Course",
+      "description": "Learn PyTorch for deep learning in this comprehensive course for beginners. PyTorch is a machine learning framework written in Python.",
+      "tags": [
+        "aiml"
+      ],
+      "url": "https://www.youtube.com/watch?v=V_xro1bcAuA&list=PLWKjhJtqVAblStefaz_YOVpDWqcRScc2s&index=5",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0161",
+      "title": "Practical Deep Learning for Coders - Full Course from fast.ai and Jeremy Howard",
+      "description": "Practical Deep Learning for Coders is a course from fast.ai designed to give you a complete introduction to deep learning. Made accessible to as many people as possible.",
+      "tags": [
+        "aiml"
+      ],
+      "url": "https://www.youtube.com/watch?v=0oyCUWLL_fU&list=PLWKjhJtqVAblStefaz_YOVpDWqcRScc2s&index=6",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0162",
+      "title": "Deep Learning Crash Course for Beginners",
+      "description": "Learn the fundamental concepts and terminology of Deep Learning. Neural Networks, ML constructs like Supervised, Unsupervised and Reinforcement Learning, and NN architectures — all without any code.",
+      "tags": [
+        "aiml"
+      ],
+      "url": "https://www.youtube.com/watch?v=VyWAvY2CF9c&list=PLWKjhJtqVAblStefaz_YOVpDWqcRScc2s&index=7",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0163",
+      "title": "Python TensorFlow for Machine Learning – Neural Network Text Classification Tutorial",
+      "description": "Introduction to ML concepts and neural network implementation using Python and TensorFlow. Classification, regression, training/validation/test datasets, loss functions, neural networks, and model training.",
+      "tags": [
+        "aiml"
+      ],
+      "url": "https://www.youtube.com/watch?v=VtRLrQ3Ev-U&list=PLWKjhJtqVAblStefaz_YOVpDWqcRScc2s&index=8",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0164",
+      "title": "Keras with TensorFlow Course - Python Deep Learning and Neural Networks for Beginners Tutorial",
+      "description": "How to use Keras, a neural network API written in Python and integrated with TensorFlow. Prepare and process data for artificial neural networks, build and train ANN + CNN, implement fine-tuning and transfer learning.",
+      "tags": [
+        "aiml"
+      ],
+      "url": "https://www.youtube.com/watch?v=qFJeN9V1ZsI&list=PLWKjhJtqVAblStefaz_YOVpDWqcRScc2s&index=9",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0165",
+      "title": "OpenCV Course - Full Tutorial with Python",
+      "description": "Everything you need to know about OpenCV in this full course for beginners. From the very basics to advanced concepts, ending with a Deep CV model to classify characters in a popular TV series.",
+      "tags": [
+        "aiml"
+      ],
+      "url": "https://www.youtube.com/watch?v=oXlwWbU8l2o&list=PLWKjhJtqVAblStefaz_YOVpDWqcRScc2s&index=10",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0166",
+      "title": "How Deep Neural Networks Work - Full Course for Beginners",
+      "description": "Comfortable with the concepts and math behind neural networks. Neural networks demystified for absolute beginners.",
+      "tags": [
+        "aiml"
+      ],
+      "url": "https://www.youtube.com/watch?v=dPWYUELwIdM&list=PLWKjhJtqVAblStefaz_YOVpDWqcRScc2s&index=11",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0167",
+      "title": "TensorFlow 2.0 Crash Course",
+      "description": "Learn how to use TensorFlow 2.0 in this crash course for beginners. Create neural networks with Python and TensorFlow 2.0.",
+      "tags": [
+        "aiml"
+      ],
+      "url": "https://www.youtube.com/watch?v=6g4O5UOH304&list=PLWKjhJtqVAblStefaz_YOVpDWqcRScc2s&index=12",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0168",
+      "title": "Scikit-Learn Course - Machine Learning in Python Tutorial",
+      "description": "Scikit-learn is a free software machine learning library for the Python programming language. Learn about machine learning using scikit-learn in this full course.",
+      "tags": [
+        "aiml"
+      ],
+      "url": "https://www.youtube.com/watch?v=pqNCD_5r0IU&list=PLWKjhJtqVAblStefaz_YOVpDWqcRScc2s&index=13",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0169",
+      "title": "Scikit-learn Crash Course - Machine Learning Library for Python",
+      "description": "Scikit-learn crash course.",
+      "tags": [
+        "aiml"
+      ],
+      "url": "https://www.youtube.com/watch?v=0B5eIE_1vpU&list=PLWKjhJtqVAblStefaz_YOVpDWqcRScc2s&index=14",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0170",
+      "title": "Machine Learning Course for Beginners",
+      "description": "Theory and practical application of machine learning concepts in this comprehensive course for beginners.",
+      "tags": [
+        "aiml"
+      ],
+      "url": "https://www.youtube.com/watch?v=NWONeJKn6kc&list=PLWKjhJtqVAblStefaz_YOVpDWqcRScc2s&index=15",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0180",
+      "title": "AlphaZero from Scratch – Machine Learning Tutorial",
+      "description": "Build AlphaZero from scratch. Game-playing algorithm that uses AI and ML techniques to learn to play board games at a superhuman level.",
+      "tags": [
+        "aiml"
+      ],
+      "url": "https://www.youtube.com/watch?v=wuSQpLinRB4&list=PLWKjhJtqVAblStefaz_YOVpDWqcRScc2s&index=16",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0181",
+      "title": "Computer Vision and Perception for Self-Driving Cars (Deep Learning Course)",
+      "description": "About Computer Vision and Perception for Self Driving Cars. This series focuses on the different tasks that a Self Driving Car Perception unit would be required to do.",
+      "tags": [
+        "aiml"
+      ],
+      "url": "https://www.youtube.com/watch?v=cPOtULagNnI&list=PLWKjhJtqVAblStefaz_YOVpDWqcRScc2s&index=17",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0230",
+      "title": "CS221 - Artificial Intelligence (Stanford)",
+      "description": "Foundations of AI: search, reasoning, planning, decision-making.",
+      "tags": [
+        "aiml"
+      ],
+      "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rOca_Ovz1DvdtWuz8BfSWL2",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0231",
+      "title": "CS229 - Machine Learning (Andrew Ng, Stanford)",
+      "description": "Led by Andrew Ng, this course provides a broad introduction to machine learning and statistical pattern recognition.",
+      "tags": [
+        "aiml"
+      ],
+      "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0232",
+      "title": "CS230 - Deep Learning (Andrew Ng, Stanford)",
+      "description": "Convolutional networks, RNNs, LSTM, Adam, Dropout, BatchNorm, Xavier/He initialization, and more. Case studies from healthcare, autonomous driving, sign language reading, music generation, and NLP.",
+      "tags": [
+        "aiml"
+      ],
+      "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0233",
+      "title": "CS229M - Machine Learning Theory (Stanford)",
+      "description": "When do machine learning algorithms work and why? How do we formalize what it means for an algorithm to learn from data? How do we use mathematical thinking to design better ML methods?",
+      "tags": [
+        "aiml",
+        "math"
+      ],
+      "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rP8nAmISxFINlGKSK4rbLKh",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0234",
+      "title": "CS234 - Reinforcement Learning (Stanford)",
+      "description": "Solid introduction to the field of reinforcement learning. Core challenges and approaches, generalization and exploration. Includes deep reinforcement learning.",
+      "tags": [
+        "aiml"
+      ],
+      "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rN4wG6Nk6sNpTEbuOSosZdX",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0235",
+      "title": "CS224N - NLP with Deep Learning (Stanford)",
+      "description": "Project-oriented class focused on developing systems and algorithms for robust machine understanding of human language. Draws on theoretical concepts from linguistics, NLP, and ML.",
+      "tags": [
+        "aiml"
+      ],
+      "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rObpMCir6rNNUlFAn56Js20",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0293",
+      "title": "Neural Networks: Zero to Hero (Karpathy)",
+      "description": "Build micrograd, makemore, GPT-2 from scratch — arguably the best modern DL series.",
+      "tags": [
+        "aiml"
+      ],
+      "url": "https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0294",
+      "title": "Let's build GPT: from scratch, in code, spelled out",
+      "description": "Karpathy live-codes a nano-GPT and explains every step.",
+      "tags": [
+        "aiml"
+      ],
+      "url": "https://www.youtube.com/watch?v=kCc8FmEb1nY",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0295",
+      "title": "Let's reproduce GPT-2 (124M)",
+      "description": "Karpathy rebuilds GPT-2 end-to-end including training on FineWeb.",
+      "tags": [
+        "aiml"
+      ],
+      "url": "https://www.youtube.com/watch?v=l8pRSuU81PU",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0296",
+      "title": "Let's build the GPT Tokenizer",
+      "description": "Byte-Pair Encoding from scratch, and why tokenization is weirder than you think.",
+      "tags": [
+        "aiml"
+      ],
+      "url": "https://www.youtube.com/watch?v=zduSFxRajkE",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0297",
+      "title": "State of GPT (Karpathy)",
+      "description": "End-to-end tour of how modern chat LLMs are trained and aligned.",
+      "tags": [
+        "aiml"
+      ],
+      "url": "https://www.youtube.com/watch?v=bZQun8Y4L2A",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0298",
+      "title": "Intro to Large Language Models (Karpathy)",
+      "description": "1-hour executive-level intro to modern LLMs.",
+      "tags": [
+        "aiml"
+      ],
+      "url": "https://www.youtube.com/watch?v=zjkBMFhNj_g",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0299",
+      "title": "3Blue1Brown: Differential Equations",
+      "description": "The visual DE course.",
+      "tags": [
+        "math"
+      ],
+      "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDNPOjrT6KVlfJuKtYTftqH6",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "metadata_only",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0380",
+      "title": "Google DeepMind x UCL: RL Lecture Series",
+      "description": "David Silver's classic Reinforcement Learning lectures.",
+      "tags": [
+        "aiml"
+      ],
+      "url": "https://www.youtube.com/playlist?list=PLqYmG7hTraZDVH599EItlEWsUOsJbAodm",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0381",
+      "title": "DeepMind: Deep Learning Lecture Series 2020",
+      "description": "DeepMind researchers on modern DL topics.",
+      "tags": [
+        "aiml"
+      ],
+      "url": "https://www.youtube.com/playlist?list=PLqYmG7hTraZCDxZ44o4p3N5Anz3lLRVZF",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0457",
+      "title": "Stanford Online: ML Full Course (YouTube)",
+      "description": "Extended lectures for a full ML overview.",
+      "tags": [
+        "aiml"
+      ],
+      "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rNyWOpJg_Yh4NSqI4Z4vOYy",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0459",
+      "title": "MIT: Introduction to Deep Learning Basics (YouTube)",
+      "description": "Companion to 6.S191 with hands-on labs.",
+      "tags": [
+        "aiml"
+      ],
+      "url": "https://www.youtube.com/playlist?list=PLtBw6njQRU-rwp5__7C0oIVt26ZgjG9NI",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0463",
+      "title": "Two Minute Papers",
+      "description": "Digestible research summaries; useful reading list.",
+      "tags": [
+        "aiml"
+      ],
+      "url": "https://www.youtube.com/@TwoMinutePapers",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0464",
+      "title": "Yannic Kilcher",
+      "description": "Paper-a-week AI research breakdowns.",
+      "tags": [
+        "aiml"
+      ],
+      "url": "https://www.youtube.com/@YannicKilcher",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0465",
+      "title": "AI Coffee Break with Letitia",
+      "description": "Concise breakdowns of NLP/vision papers.",
+      "tags": [
+        "aiml"
+      ],
+      "url": "https://www.youtube.com/@AICoffeeBreak",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0560",
+      "title": "LiveOverflow: Binary Exploitation / Buffer Overflow",
+      "description": "YouTube deep-dive series into exploit dev.",
+      "tags": [
+        "exploits"
+      ],
+      "url": "https://www.youtube.com/playlist?list=PLhixgUqwRTjxglIswKp9mpkfPNfHkzyeN",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "quarantine_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0561",
+      "title": "LiveOverflow: Reverse Engineering",
+      "description": "Modern RE techniques on YouTube.",
+      "tags": [
+        "re"
+      ],
+      "url": "https://www.youtube.com/playlist?list=PLhixgUqwRTjxAnkTuGGE0IZO4y1s2H4te",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "metadata_only",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0562",
+      "title": "LiveOverflow: HackTheBox Machines",
+      "description": "Walkthroughs across HTB machines with commentary.",
+      "tags": [
+        "red"
+      ],
+      "url": "https://www.youtube.com/playlist?list=PLhixgUqwRTjzzBeFSHXrw9DnQtssdAwgG",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "quarantine_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0563",
+      "title": "LiveOverflow (channel)",
+      "description": "A running series of CTF-solving explanations.",
+      "tags": [
+        "ctf",
+        "red"
+      ],
+      "url": "https://www.youtube.com/@LiveOverflow",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0564",
+      "title": "LiveOverflow: Fuzzing (What The Fuzz)",
+      "description": "Applied fuzzing walkthroughs.",
+      "tags": [
+        "exploits"
+      ],
+      "url": "https://www.youtube.com/playlist?list=PLhixgUqwRTjyLgNpe1XU4rHy_QOUymGgH",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "quarantine_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0566",
+      "title": "TCM Security: Practical Ethical Hacker",
+      "description": "Heath Adams's free 15-hour ethical hacking course.",
+      "tags": [
+        "red"
+      ],
+      "url": "https://www.youtube.com/watch?v=3FNYvj2U0HM",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "quarantine_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0567",
+      "title": "TCM Security: Windows Privilege Escalation for Beginners",
+      "description": "The winPEAS/Sherlock/PowerUp curriculum, free.",
+      "tags": [
+        "red"
+      ],
+      "url": "https://www.youtube.com/watch?v=6IAcqm1_deI",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "quarantine_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0568",
+      "title": "TCM Security: Linux Privilege Escalation for Beginners",
+      "description": "linPEAS/PSPY-driven priv-esc course.",
+      "tags": [
+        "red"
+      ],
+      "url": "https://www.youtube.com/watch?v=8HODfmt3Uz0",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "quarantine_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0569",
+      "title": "TCM Security: OSINT Fundamentals",
+      "description": "Free OSINT primer from TCM.",
+      "tags": [
+        "osint"
+      ],
+      "url": "https://www.youtube.com/watch?v=qwA6MmbeGNo",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "metadata_only",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0570",
+      "title": "TCM Security: Practical Bug Bounty",
+      "description": "Getting into bug bounty and OWASP-Top-10 tradecraft.",
+      "tags": [
+        "webappsec"
+      ],
+      "url": "https://www.youtube.com/watch?v=A1K7DRSDaBs",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0571",
+      "title": "HackerSploit: Linux Basics for Ethical Hackers",
+      "description": "Free hands-on Linux for pentesting.",
+      "tags": [
+        "red",
+        "dev"
+      ],
+      "url": "https://www.youtube.com/playlist?list=PLBf0hzazHTGO5xdMFvpKgv3RdW-9wpTiV",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "quarantine_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0572",
+      "title": "HackerSploit: Penetration Testing Bootcamp",
+      "description": "End-to-end pentesting playbook.",
+      "tags": [
+        "red"
+      ],
+      "url": "https://www.youtube.com/playlist?list=PLBf0hzazHTGPgvHrO9nxGjF-c-jSKJEck",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "quarantine_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0573",
+      "title": "HackerSploit: Web Application Pentesting",
+      "description": "Web app pentesting walkthroughs.",
+      "tags": [
+        "webappsec"
+      ],
+      "url": "https://www.youtube.com/playlist?list=PLBf0hzazHTGNRIw-cKgIPtIwkS7NUFDNK",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0574",
+      "title": "HackerSploit: Bug Bounty Methodology",
+      "description": "Recon-focused bug bounty methodology.",
+      "tags": [
+        "webappsec"
+      ],
+      "url": "https://www.youtube.com/playlist?list=PLBf0hzazHTGPRRRE5ihYtxx1cbGx-9WFn",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0575",
+      "title": "HackerSploit: Docker for Pentesters",
+      "description": "Containerize your pentest toolkit.",
+      "tags": [
+        "red",
+        "cloud"
+      ],
+      "url": "https://www.youtube.com/playlist?list=PLBf0hzazHTGMLzc22oZzT0EAmqXAg65O0",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0656",
+      "title": "John Hammond (YouTube)",
+      "description": "John's CTF walkthroughs and malware demos.",
+      "tags": [
+        "red",
+        "ctf"
+      ],
+      "url": "https://www.youtube.com/@_JohnHammond",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0657",
+      "title": "S4vitar (YouTube)",
+      "description": "S4vitar's red-team content and machine walkthroughs.",
+      "tags": [
+        "red"
+      ],
+      "url": "https://www.youtube.com/@s4vitar",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "quarantine_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0658",
+      "title": "MurmusCTF (YouTube)",
+      "description": "CTF challenge writeups and hacking playlists.",
+      "tags": [
+        "red",
+        "ctf"
+      ],
+      "url": "https://www.youtube.com/@murmus_ctf",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0713",
+      "title": "13Cubed: Windows Forensics Series",
+      "description": "Windows DFIR walkthroughs on YouTube.",
+      "tags": [
+        "blue",
+        "forensics"
+      ],
+      "url": "https://www.youtube.com/@13cubed",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0715",
+      "title": "OALabs (YouTube)",
+      "description": "Reverse engineering and malware unpacking series.",
+      "tags": [
+        "blue",
+        "re"
+      ],
+      "url": "https://www.youtube.com/@OALabs",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0800",
+      "title": "NahamSec (YouTube)",
+      "description": "Public recon course for bug bounty.",
+      "tags": [
+        "webappsec"
+      ],
+      "url": "https://www.youtube.com/@NahamSec",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0801",
+      "title": "Stok (YouTube)",
+      "description": "Stok's well-organized bug bounty videos.",
+      "tags": [
+        "webappsec"
+      ],
+      "url": "https://www.youtube.com/@stokfredrik",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0803",
+      "title": "TCM Security Academy (YouTube)",
+      "description": "BB tradecraft from TCM Security.",
+      "tags": [
+        "webappsec"
+      ],
+      "url": "https://www.youtube.com/@TCMSecurityAcademy",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0844",
+      "title": "GhidraNinja YouTube",
+      "description": "Walkthrough of new features across Ghidra releases.",
+      "tags": [
+        "re"
+      ],
+      "url": "https://www.youtube.com/@GhidraNinja",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "metadata_only",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0857",
+      "title": "OALabs (unpacking playlists)",
+      "description": "Applied unpacking with x64dbg, IDA and Ghidra.",
+      "tags": [
+        "re",
+        "blue"
+      ],
+      "url": "https://www.youtube.com/@OALabs/videos",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0888",
+      "title": "Stacksmashing (YouTube)",
+      "description": "Hardware and embedded RE explorations.",
+      "tags": [
+        "re"
+      ],
+      "url": "https://www.youtube.com/@stacksmashing",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "metadata_only",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0889",
+      "title": "LaurieWired",
+      "description": "Modern low-level RE and internals videos.",
+      "tags": [
+        "re"
+      ],
+      "url": "https://www.youtube.com/@LaurieWired",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "metadata_only",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0890",
+      "title": "Guided Hacking: RE Videos",
+      "description": "RE for game hacking and general.",
+      "tags": [
+        "re",
+        "game"
+      ],
+      "url": "https://www.youtube.com/@GuidedHacking/videos",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "quarantine_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "0891",
+      "title": "Vector 35 (Binary Ninja) YouTube",
+      "description": "Binary Ninja livestreams and features.",
+      "tags": [
+        "re"
+      ],
+      "url": "https://www.youtube.com/@vector35",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "metadata_only",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "1199",
+      "title": "13Cubed Videos",
+      "description": "Free deep-dive series into Windows forensics.",
+      "tags": [
+        "forensics",
+        "blue"
+      ],
+      "url": "https://www.youtube.com/@13cubed/videos",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "1275",
+      "title": "GH YouTube Playlists",
+      "description": "GH's YouTube playlists on game hacking.",
+      "tags": [
+        "game",
+        "re"
+      ],
+      "url": "https://www.youtube.com/@GuidedHacking/playlists",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "quarantine_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "1278",
+      "title": "Fleep Tutorials (YouTube)",
+      "description": "Classic YouTube tutorial series.",
+      "tags": [
+        "game",
+        "re"
+      ],
+      "url": "https://www.youtube.com/@FleepTutorials/videos",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "quarantine_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "1282",
+      "title": "Solaire GH (YouTube)",
+      "description": "YouTube tutorials for practical game hacking.",
+      "tags": [
+        "game",
+        "re"
+      ],
+      "url": "https://www.youtube.com/@SolaireGH/videos",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "quarantine_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "1347",
+      "title": "Ben Eater (YouTube)",
+      "description": "Ben Eater's Ethernet + protocol videos.",
+      "tags": [
+        "infra",
+        "dev"
+      ],
+      "url": "https://www.youtube.com/@BenEater",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "1350",
+      "title": "CS144 Video Playlist",
+      "description": "CS144 lectures on YouTube.",
+      "tags": [
+        "infra",
+        "dev"
+      ],
+      "url": "https://www.youtube.com/playlist?list=PLoCMsyE1cvdWKsLVyf6cPwCLDIZnOj0NS",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "1402",
+      "title": "TechWorld with Nana (YouTube)",
+      "description": "Full DevOps course on YouTube.",
+      "tags": [
+        "dev",
+        "cloud"
+      ],
+      "url": "https://www.youtube.com/@TechWorldwithNana",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "1467",
+      "title": "Ben Eater: 6502 Playlist",
+      "description": "Build a computer from a 6502 CPU.",
+      "tags": [
+        "iot",
+        "dev"
+      ],
+      "url": "https://www.youtube.com/playlist?list=PLowKtXNTBypFbtuVMUVXNR0z1mu7dp7eH",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "metadata_only",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "1468",
+      "title": "Ben Eater: 8-Bit CPU Playlist",
+      "description": "Iconic YouTube series building a CPU.",
+      "tags": [
+        "iot",
+        "dev"
+      ],
+      "url": "https://www.youtube.com/playlist?list=PLowKtXNTBypGqImE405J2565dvjafglHU",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "metadata_only",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "1643",
+      "title": "freeCodeCamp YouTube",
+      "description": "Full multi-hour courses on many topics.",
+      "tags": [
+        "dev"
+      ],
+      "url": "https://www.youtube.com/@freecodecamp",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "metadata_only",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "1644",
+      "title": "Fireship YouTube",
+      "description": "Rapid modern-web tech overviews.",
+      "tags": [
+        "dev"
+      ],
+      "url": "https://www.youtube.com/@Fireship",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "metadata_only",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "1645",
+      "title": "The Coding Train",
+      "description": "Creative-code tutorials in JS/p5.",
+      "tags": [
+        "dev"
+      ],
+      "url": "https://www.youtube.com/@TheCodingTrain",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "metadata_only",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "1646",
+      "title": "Andrej Karpathy (channel)",
+      "description": "Karpathy's DL and language model lectures.",
+      "tags": [
+        "aiml"
+      ],
+      "url": "https://www.youtube.com/@AndrejKarpathy",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "1647",
+      "title": "sentdex",
+      "description": "Long-running Python + ML tutorials.",
+      "tags": [
+        "aiml",
+        "dev"
+      ],
+      "url": "https://www.youtube.com/@sentdex",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "1648",
+      "title": "Corey Schafer",
+      "description": "The canonical Python YouTube channel.",
+      "tags": [
+        "dev"
+      ],
+      "url": "https://www.youtube.com/@coreyms",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "metadata_only",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "1649",
+      "title": "The Net Ninja",
+      "description": "Web dev + JavaScript video series.",
+      "tags": [
+        "dev"
+      ],
+      "url": "https://www.youtube.com/@NetNinja",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "metadata_only",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "1650",
+      "title": "Web Dev Simplified",
+      "description": "Modern web dev tutorials.",
+      "tags": [
+        "dev"
+      ],
+      "url": "https://www.youtube.com/@WebDevSimplified",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "metadata_only",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "1651",
+      "title": "Traversy Media",
+      "description": "Full-stack dev tutorials.",
+      "tags": [
+        "dev"
+      ],
+      "url": "https://www.youtube.com/@TraversyMedia",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "metadata_only",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "1652",
+      "title": "Programming with Mosh",
+      "description": "Structured programming courses.",
+      "tags": [
+        "dev"
+      ],
+      "url": "https://www.youtube.com/@programmingwithmosh",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "metadata_only",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "1653",
+      "title": "Computerphile",
+      "description": "Computer-science topics from Nottingham.",
+      "tags": [
+        "dev"
+      ],
+      "url": "https://www.youtube.com/@Computerphile",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "metadata_only",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "1654",
+      "title": "Numberphile",
+      "description": "Math-themed videos.",
+      "tags": [
+        "math"
+      ],
+      "url": "https://www.youtube.com/@numberphile",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "metadata_only",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "1655",
+      "title": "DeepLearning.AI YouTube",
+      "description": "DL.AI's official YouTube.",
+      "tags": [
+        "aiml"
+      ],
+      "url": "https://www.youtube.com/@Deeplearningai",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "1656",
+      "title": "Code Aesthetic",
+      "description": "Deep code-quality videos.",
+      "tags": [
+        "dev"
+      ],
+      "url": "https://www.youtube.com/@CodeAesthetic",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "metadata_only",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "1657",
+      "title": "ThePrimeagen",
+      "description": "Software engineering + tooling videos.",
+      "tags": [
+        "dev"
+      ],
+      "url": "https://www.youtube.com/@ThePrimeagen",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "metadata_only",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "1658",
+      "title": "Low Level Learning",
+      "description": "Systems programming + RE-adjacent tutorials.",
+      "tags": [
+        "dev",
+        "re"
+      ],
+      "url": "https://www.youtube.com/@LowLevelLearning",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "metadata_only",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "1659",
+      "title": "geohot Archive",
+      "description": "Long-form programming livestreams.",
+      "tags": [
+        "dev",
+        "aiml"
+      ],
+      "url": "https://www.youtube.com/@geohotarchive",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "1660",
+      "title": "NetworkChuck",
+      "description": "IT + networking + cloud tutorials.",
+      "tags": [
+        "dev",
+        "cloud",
+        "infra"
+      ],
+      "url": "https://www.youtube.com/@NetworkChuck",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "candidate_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "1661",
+      "title": "Ben Eater (channel)",
+      "description": "Hardware + networking demonstrations.",
+      "tags": [
+        "dev",
+        "iot"
+      ],
+      "url": "https://www.youtube.com/@BenEater",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "metadata_only",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "1662",
+      "title": "Sebastian Lague",
+      "description": "Programming + graphics + games.",
+      "tags": [
+        "dev",
+        "game"
+      ],
+      "url": "https://www.youtube.com/@SebastianLague",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "quarantine_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "1663",
+      "title": "Coding Adventure Playlist",
+      "description": "Iconic long-form dev livestreams.",
+      "tags": [
+        "dev",
+        "game"
+      ],
+      "url": "https://www.youtube.com/playlist?list=PLFt_AvWsXl0eZgMK_DT5_biRkWXftAOf9",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "quarantine_review",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    },
+    {
+      "id": "1698",
+      "title": "Kevin Powell (CSS)",
+      "description": "CSS-focused YouTube channel.",
+      "tags": [
+        "dev"
+      ],
+      "url": "https://www.youtube.com/@KevinPowell",
+      "media_type": "youtube_video_or_playlist",
+      "admission": "metadata_only",
+      "source": {
+        "hub": "https://kazamadono.github.io/",
+        "catalog_url": "https://kazamadono.github.io/courses.json",
+        "catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+        "captured_at": "2026-09-19T10:19:59Z"
+      },
+      "content_status": "metadata_only"
+    }
+  ]
+}

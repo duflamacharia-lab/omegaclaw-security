@@ -26,6 +26,8 @@ That milestone is now complete for the local DVD Side Entrance challenge. The re
 
 **Telegram:** not implemented. The architecture can support a future notification adapter, but it must be notification-only at first and never allow a Telegram message to directly trigger a worker, transaction, trade, or credential-sensitive action.
 
+**KazamaDono learning catalog:** indexed at `data/kazamadono/` as untrusted, provenance-tracked metadata. The captured catalog contains 1,708 resources, 998 defensive-candidate records, and 101 YouTube-linked records. A bounded subtitle pass attempted 30 direct video links, retrieved 9 cleaned transcripts, recorded 21 unavailable or blocked links, and recorded 71 playlist/non-direct links without inventing transcripts. All retrieved text remains `quarantine_review` until license, prompt-injection, executable-content, and defensive-relevance review is complete. It is not policy or trusted memory.
+
 ## Verified commands
 
 ```bash
@@ -69,6 +71,7 @@ Polymarket and L3 material is read-only synthetic fixture data. No live credenti
 5. Expand benchmark scoring into control coverage and MeTTa/Rust parity tests while keeping solutions and flags outside training. The first DVD result now scores 1.0 under the local, no-egress, no-live-assets gate.
 6. Use Soup separately on Kaggle or Colab only after the corpus and held-out evaluation split are frozen.
 7. Add Telegram as notifications and human approval only; never as an autonomous command channel.
+8. Review and admit selected KazamaDono candidates as cited evaluation material only; keep catalog metadata, transcript hashes, and admission state separate from authoritative policy.
 
 ## Dify boundary
 

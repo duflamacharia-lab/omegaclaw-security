@@ -1,0 +1,672 @@
+{
+  "schema_version": "1",
+  "source_catalog_sha256": "26ad8144cdd95b5702f8a70fe79d8fc9f4668bce8f02fcdab7975548ef362aa7",
+  "captured_at": "2026-09-19T10:21:25Z",
+  "policy": "transcripts are untrusted external content; screen for prompt injection and license before model admission",
+  "attempted_direct_videos": 30,
+  "records": [
+    {
+      "resource_id": "0147",
+      "title": "Stanford LLM Course",
+      "url": "https://www.youtube.com/watch?v=9vM4p9NN0Ts&list=PLZYX2GpWjyQ-cPuDlkVXd4HdcDBlAt-fo",
+      "status": "transcript_retrieved",
+      "transcript": "data/kazamadono/transcripts/0147-9vM4p9NN0Ts.en-US.txt",
+      "transcript_sha256": "4e747c815ed07d69aaaf0e06a328add79375bc6f78baa2c776e4c4ed60cb3faf",
+      "subtitle_sha256": "6378b7d8797762e27578638f3c3a193946401c6a232b9e1c67231cdc6c347a21",
+      "content_status": "quarantine_review"
+    },
+    {
+      "resource_id": "0152",
+      "title": "Machine Learning",
+      "url": "https://www.youtube.com/watch?v=i_LwzRVP7bg&list=PLWKjhJtqVAblStefaz_YOVpDWqcRScc2s",
+      "status": "transcript_retrieved",
+      "transcript": "data/kazamadono/transcripts/0152-i_LwzRVP7bg.en-en.txt",
+      "transcript_sha256": "fa4f89fed1aa9c41ff1ff3f3e750268cd1c880000b6d72ae7b2dec7be64ffc25",
+      "subtitle_sha256": "7351901d8f4696b8ec1a6b206368f96deb60615edc915281a3eeabbc0046df25",
+      "content_status": "quarantine_review"
+    },
+    {
+      "resource_id": "0153",
+      "title": "GuidedHacking Youtube Playlists",
+      "url": "https://www.youtube.com/@GuidedHacking/playlists",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "0155",
+      "title": "Understanding AI from Scratch – Neural Networks Course",
+      "url": "https://www.youtube.com/watch?v=VgzHT9quo5c",
+      "status": "unavailable_or_blocked",
+      "error": "ERROR: [youtube] VgzHT9quo5c: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies\n"
+    },
+    {
+      "resource_id": "0156",
+      "title": "Generative AI Full Course – Gemini Pro, OpenAI, Llama, Langchain, Pinecone, Vector Databases & More",
+      "url": "https://www.youtube.com/watch?v=mEsleV16qdo",
+      "status": "unavailable_or_blocked",
+      "error": "ERROR: [youtube] mEsleV16qdo: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies\n"
+    },
+    {
+      "resource_id": "0157",
+      "title": "Self-Driving Car with JavaScript Course – Neural Networks and Machine Learning",
+      "url": "https://www.youtube.com/watch?v=Rs_rAxEsAvI",
+      "status": "transcript_retrieved",
+      "transcript": "data/kazamadono/transcripts/0157-Rs_rAxEsAvI.en-en.txt",
+      "transcript_sha256": "1c8cd822b3ef6c69956bb9fb4742e2e77394c47dca3f45659f570d2a62413bb0",
+      "subtitle_sha256": "f97beba5a01f17447de20b9e2259925b8c3c04f08e2b1499e2d616b38a29b0ba",
+      "content_status": "quarantine_review"
+    },
+    {
+      "resource_id": "0158",
+      "title": "TensorFlow 2.0 Complete Course - Python Neural Networks for Beginners Tutorial",
+      "url": "https://www.youtube.com/watch?v=tPYj3fFJGjk&list=PLWKjhJtqVAblStefaz_YOVpDWqcRScc2s&index=2",
+      "status": "unavailable_or_blocked",
+      "error": "ERROR: [youtube] tPYj3fFJGjk: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies\n"
+    },
+    {
+      "resource_id": "0159",
+      "title": "No Black Box Machine Learning Course – Learn Without Libraries",
+      "url": "https://www.youtube.com/watch?v=vDDjtwQDw2k&list=PLWKjhJtqVAblStefaz_YOVpDWqcRScc2s&index=4",
+      "status": "unavailable_or_blocked",
+      "error": "ERROR: [youtube] vDDjtwQDw2k: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies\n"
+    },
+    {
+      "resource_id": "0160",
+      "title": "PyTorch for Deep Learning & Machine Learning – Full Course",
+      "url": "https://www.youtube.com/watch?v=V_xro1bcAuA&list=PLWKjhJtqVAblStefaz_YOVpDWqcRScc2s&index=5",
+      "status": "transcript_retrieved",
+      "transcript": "data/kazamadono/transcripts/0160-V_xro1bcAuA.en-en.txt",
+      "transcript_sha256": "0c8331d5f5214e4f9f6b715201ccee5c675d476ea00cf1911bc233866649fbdc",
+      "subtitle_sha256": "d4827eefb227b2a96968bf8a5a884ae2744952ebe356cdb3955bc57d836dc35a",
+      "content_status": "quarantine_review"
+    },
+    {
+      "resource_id": "0161",
+      "title": "Practical Deep Learning for Coders - Full Course from fast.ai and Jeremy Howard",
+      "url": "https://www.youtube.com/watch?v=0oyCUWLL_fU&list=PLWKjhJtqVAblStefaz_YOVpDWqcRScc2s&index=6",
+      "status": "unavailable_or_blocked",
+      "error": "ERROR: [youtube] 0oyCUWLL_fU: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies\n"
+    },
+    {
+      "resource_id": "0162",
+      "title": "Deep Learning Crash Course for Beginners",
+      "url": "https://www.youtube.com/watch?v=VyWAvY2CF9c&list=PLWKjhJtqVAblStefaz_YOVpDWqcRScc2s&index=7",
+      "status": "transcript_retrieved",
+      "transcript": "data/kazamadono/transcripts/0162-VyWAvY2CF9c.en-orig.txt",
+      "transcript_sha256": "14435e1005db7f2fdb7f8f69d8ca91f47921e0aa0cb88b9a849d79795e5d6c1b",
+      "subtitle_sha256": "dc930f689e411e8b079f1df2bc8156d1c420dc5f027acc458ab18809cd5c30e0",
+      "content_status": "quarantine_review"
+    },
+    {
+      "resource_id": "0163",
+      "title": "Python TensorFlow for Machine Learning – Neural Network Text Classification Tutorial",
+      "url": "https://www.youtube.com/watch?v=VtRLrQ3Ev-U&list=PLWKjhJtqVAblStefaz_YOVpDWqcRScc2s&index=8",
+      "status": "unavailable_or_blocked",
+      "error": "ERROR: [youtube] VtRLrQ3Ev-U: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies\n"
+    },
+    {
+      "resource_id": "0164",
+      "title": "Keras with TensorFlow Course - Python Deep Learning and Neural Networks for Beginners Tutorial",
+      "url": "https://www.youtube.com/watch?v=qFJeN9V1ZsI&list=PLWKjhJtqVAblStefaz_YOVpDWqcRScc2s&index=9",
+      "status": "transcript_retrieved",
+      "transcript": "data/kazamadono/transcripts/0164-qFJeN9V1ZsI.en-en.txt",
+      "transcript_sha256": "730120774649c1eaadcc7640988eaab2f1484e28a15697f42bbd26bba6165765",
+      "subtitle_sha256": "668c592ec56e690c71fa6e2601ae23852c25941d706af54b7e947e0a73a26cf3",
+      "content_status": "quarantine_review"
+    },
+    {
+      "resource_id": "0165",
+      "title": "OpenCV Course - Full Tutorial with Python",
+      "url": "https://www.youtube.com/watch?v=oXlwWbU8l2o&list=PLWKjhJtqVAblStefaz_YOVpDWqcRScc2s&index=10",
+      "status": "unavailable_or_blocked",
+      "error": "ERROR: [youtube] oXlwWbU8l2o: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies\n"
+    },
+    {
+      "resource_id": "0166",
+      "title": "How Deep Neural Networks Work - Full Course for Beginners",
+      "url": "https://www.youtube.com/watch?v=dPWYUELwIdM&list=PLWKjhJtqVAblStefaz_YOVpDWqcRScc2s&index=11",
+      "status": "unavailable_or_blocked",
+      "error": "ERROR: [youtube] dPWYUELwIdM: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies\n"
+    },
+    {
+      "resource_id": "0167",
+      "title": "TensorFlow 2.0 Crash Course",
+      "url": "https://www.youtube.com/watch?v=6g4O5UOH304&list=PLWKjhJtqVAblStefaz_YOVpDWqcRScc2s&index=12",
+      "status": "unavailable_or_blocked",
+      "error": "ERROR: [youtube] 6g4O5UOH304: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies\n"
+    },
+    {
+      "resource_id": "0168",
+      "title": "Scikit-Learn Course - Machine Learning in Python Tutorial",
+      "url": "https://www.youtube.com/watch?v=pqNCD_5r0IU&list=PLWKjhJtqVAblStefaz_YOVpDWqcRScc2s&index=13",
+      "status": "unavailable_or_blocked",
+      "error": "ERROR: [youtube] pqNCD_5r0IU: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies\n"
+    },
+    {
+      "resource_id": "0169",
+      "title": "Scikit-learn Crash Course - Machine Learning Library for Python",
+      "url": "https://www.youtube.com/watch?v=0B5eIE_1vpU&list=PLWKjhJtqVAblStefaz_YOVpDWqcRScc2s&index=14",
+      "status": "unavailable_or_blocked",
+      "error": "ERROR: [youtube] 0B5eIE_1vpU: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies\n"
+    },
+    {
+      "resource_id": "0170",
+      "title": "Machine Learning Course for Beginners",
+      "url": "https://www.youtube.com/watch?v=NWONeJKn6kc&list=PLWKjhJtqVAblStefaz_YOVpDWqcRScc2s&index=15",
+      "status": "unavailable_or_blocked",
+      "error": "ERROR: [youtube] NWONeJKn6kc: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies\n"
+    },
+    {
+      "resource_id": "0180",
+      "title": "AlphaZero from Scratch – Machine Learning Tutorial",
+      "url": "https://www.youtube.com/watch?v=wuSQpLinRB4&list=PLWKjhJtqVAblStefaz_YOVpDWqcRScc2s&index=16",
+      "status": "unavailable_or_blocked",
+      "error": "ERROR: [youtube] wuSQpLinRB4: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies\n"
+    },
+    {
+      "resource_id": "0181",
+      "title": "Computer Vision and Perception for Self-Driving Cars (Deep Learning Course)",
+      "url": "https://www.youtube.com/watch?v=cPOtULagNnI&list=PLWKjhJtqVAblStefaz_YOVpDWqcRScc2s&index=17",
+      "status": "transcript_retrieved",
+      "transcript": "data/kazamadono/transcripts/0181-cPOtULagNnI.en-en.txt",
+      "transcript_sha256": "1f40eb2bc41c73c63cfae5e5063d59a2452c0c5cddc11a54637808dd97d65a01",
+      "subtitle_sha256": "1265924e2341c4418907eb0746c68b09cd43f2a7eafe9ac641646a5946bf8652",
+      "content_status": "quarantine_review"
+    },
+    {
+      "resource_id": "0230",
+      "title": "CS221 - Artificial Intelligence (Stanford)",
+      "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rOca_Ovz1DvdtWuz8BfSWL2",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "0231",
+      "title": "CS229 - Machine Learning (Andrew Ng, Stanford)",
+      "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "0232",
+      "title": "CS230 - Deep Learning (Andrew Ng, Stanford)",
+      "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "0233",
+      "title": "CS229M - Machine Learning Theory (Stanford)",
+      "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rP8nAmISxFINlGKSK4rbLKh",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "0234",
+      "title": "CS234 - Reinforcement Learning (Stanford)",
+      "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rN4wG6Nk6sNpTEbuOSosZdX",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "0235",
+      "title": "CS224N - NLP with Deep Learning (Stanford)",
+      "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rObpMCir6rNNUlFAn56Js20",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "0293",
+      "title": "Neural Networks: Zero to Hero (Karpathy)",
+      "url": "https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "0294",
+      "title": "Let's build GPT: from scratch, in code, spelled out",
+      "url": "https://www.youtube.com/watch?v=kCc8FmEb1nY",
+      "status": "unavailable_or_blocked",
+      "error": "ERROR: [youtube] kCc8FmEb1nY: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies\n"
+    },
+    {
+      "resource_id": "0295",
+      "title": "Let's reproduce GPT-2 (124M)",
+      "url": "https://www.youtube.com/watch?v=l8pRSuU81PU",
+      "status": "unavailable_or_blocked",
+      "error": "ERROR: [youtube] l8pRSuU81PU: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies\n"
+    },
+    {
+      "resource_id": "0296",
+      "title": "Let's build the GPT Tokenizer",
+      "url": "https://www.youtube.com/watch?v=zduSFxRajkE",
+      "status": "unavailable_or_blocked",
+      "error": "ERROR: [youtube] zduSFxRajkE: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies\n"
+    },
+    {
+      "resource_id": "0297",
+      "title": "State of GPT (Karpathy)",
+      "url": "https://www.youtube.com/watch?v=bZQun8Y4L2A",
+      "status": "unavailable_or_blocked",
+      "error": "ERROR: [youtube] bZQun8Y4L2A: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies\n"
+    },
+    {
+      "resource_id": "0298",
+      "title": "Intro to Large Language Models (Karpathy)",
+      "url": "https://www.youtube.com/watch?v=zjkBMFhNj_g",
+      "status": "transcript_retrieved",
+      "transcript": "data/kazamadono/transcripts/0298-zjkBMFhNj_g.en-orig.txt",
+      "transcript_sha256": "a1351e0e5c8c5a3534ca420b0ba7b638f6ae7801b78c4170d0ac0000b2a7f698",
+      "subtitle_sha256": "dd82c9f16deff7292e165c38f02387acb9c9aa2b11d9cc86d45190560abe9b7b",
+      "content_status": "quarantine_review"
+    },
+    {
+      "resource_id": "0299",
+      "title": "3Blue1Brown: Differential Equations",
+      "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDNPOjrT6KVlfJuKtYTftqH6",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "0380",
+      "title": "Google DeepMind x UCL: RL Lecture Series",
+      "url": "https://www.youtube.com/playlist?list=PLqYmG7hTraZDVH599EItlEWsUOsJbAodm",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "0381",
+      "title": "DeepMind: Deep Learning Lecture Series 2020",
+      "url": "https://www.youtube.com/playlist?list=PLqYmG7hTraZCDxZ44o4p3N5Anz3lLRVZF",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "0457",
+      "title": "Stanford Online: ML Full Course (YouTube)",
+      "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rNyWOpJg_Yh4NSqI4Z4vOYy",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "0459",
+      "title": "MIT: Introduction to Deep Learning Basics (YouTube)",
+      "url": "https://www.youtube.com/playlist?list=PLtBw6njQRU-rwp5__7C0oIVt26ZgjG9NI",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "0463",
+      "title": "Two Minute Papers",
+      "url": "https://www.youtube.com/@TwoMinutePapers",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "0464",
+      "title": "Yannic Kilcher",
+      "url": "https://www.youtube.com/@YannicKilcher",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "0465",
+      "title": "AI Coffee Break with Letitia",
+      "url": "https://www.youtube.com/@AICoffeeBreak",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "0560",
+      "title": "LiveOverflow: Binary Exploitation / Buffer Overflow",
+      "url": "https://www.youtube.com/playlist?list=PLhixgUqwRTjxglIswKp9mpkfPNfHkzyeN",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "0561",
+      "title": "LiveOverflow: Reverse Engineering",
+      "url": "https://www.youtube.com/playlist?list=PLhixgUqwRTjxAnkTuGGE0IZO4y1s2H4te",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "0562",
+      "title": "LiveOverflow: HackTheBox Machines",
+      "url": "https://www.youtube.com/playlist?list=PLhixgUqwRTjzzBeFSHXrw9DnQtssdAwgG",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "0563",
+      "title": "LiveOverflow (channel)",
+      "url": "https://www.youtube.com/@LiveOverflow",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "0564",
+      "title": "LiveOverflow: Fuzzing (What The Fuzz)",
+      "url": "https://www.youtube.com/playlist?list=PLhixgUqwRTjyLgNpe1XU4rHy_QOUymGgH",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "0566",
+      "title": "TCM Security: Practical Ethical Hacker",
+      "url": "https://www.youtube.com/watch?v=3FNYvj2U0HM",
+      "status": "transcript_retrieved",
+      "transcript": "data/kazamadono/transcripts/0566-3FNYvj2U0HM.en-orig.txt",
+      "transcript_sha256": "f96a517fdbe8930dad1b452b668d41b520f671e8841a8d0826b3d929745e9c99",
+      "subtitle_sha256": "b796eb696fbf7720c2e7131a012a5d27dea34162acf06e68d171082d18c89ec0",
+      "content_status": "quarantine_review"
+    },
+    {
+      "resource_id": "0567",
+      "title": "TCM Security: Windows Privilege Escalation for Beginners",
+      "url": "https://www.youtube.com/watch?v=6IAcqm1_deI",
+      "status": "unavailable_or_blocked",
+      "error": "ERROR: [youtube] 6IAcqm1_deI: This video is unavailable\n"
+    },
+    {
+      "resource_id": "0568",
+      "title": "TCM Security: Linux Privilege Escalation for Beginners",
+      "url": "https://www.youtube.com/watch?v=8HODfmt3Uz0",
+      "status": "unavailable_or_blocked",
+      "error": "ERROR: [youtube] 8HODfmt3Uz0: This video is unavailable\n"
+    },
+    {
+      "resource_id": "0569",
+      "title": "TCM Security: OSINT Fundamentals",
+      "url": "https://www.youtube.com/watch?v=qwA6MmbeGNo",
+      "status": "unavailable_or_blocked",
+      "error": "ERROR: [youtube] qwA6MmbeGNo: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies\n"
+    },
+    {
+      "resource_id": "0570",
+      "title": "TCM Security: Practical Bug Bounty",
+      "url": "https://www.youtube.com/watch?v=A1K7DRSDaBs",
+      "status": "unavailable_or_blocked",
+      "error": "ERROR: [youtube] A1K7DRSDaBs: This video is unavailable\n"
+    },
+    {
+      "resource_id": "0571",
+      "title": "HackerSploit: Linux Basics for Ethical Hackers",
+      "url": "https://www.youtube.com/playlist?list=PLBf0hzazHTGO5xdMFvpKgv3RdW-9wpTiV",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "0572",
+      "title": "HackerSploit: Penetration Testing Bootcamp",
+      "url": "https://www.youtube.com/playlist?list=PLBf0hzazHTGPgvHrO9nxGjF-c-jSKJEck",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "0573",
+      "title": "HackerSploit: Web Application Pentesting",
+      "url": "https://www.youtube.com/playlist?list=PLBf0hzazHTGNRIw-cKgIPtIwkS7NUFDNK",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "0574",
+      "title": "HackerSploit: Bug Bounty Methodology",
+      "url": "https://www.youtube.com/playlist?list=PLBf0hzazHTGPRRRE5ihYtxx1cbGx-9WFn",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "0575",
+      "title": "HackerSploit: Docker for Pentesters",
+      "url": "https://www.youtube.com/playlist?list=PLBf0hzazHTGMLzc22oZzT0EAmqXAg65O0",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "0656",
+      "title": "John Hammond (YouTube)",
+      "url": "https://www.youtube.com/@_JohnHammond",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "0657",
+      "title": "S4vitar (YouTube)",
+      "url": "https://www.youtube.com/@s4vitar",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "0658",
+      "title": "MurmusCTF (YouTube)",
+      "url": "https://www.youtube.com/@murmus_ctf",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "0713",
+      "title": "13Cubed: Windows Forensics Series",
+      "url": "https://www.youtube.com/@13cubed",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "0715",
+      "title": "OALabs (YouTube)",
+      "url": "https://www.youtube.com/@OALabs",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "0800",
+      "title": "NahamSec (YouTube)",
+      "url": "https://www.youtube.com/@NahamSec",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "0801",
+      "title": "Stok (YouTube)",
+      "url": "https://www.youtube.com/@stokfredrik",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "0803",
+      "title": "TCM Security Academy (YouTube)",
+      "url": "https://www.youtube.com/@TCMSecurityAcademy",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "0844",
+      "title": "GhidraNinja YouTube",
+      "url": "https://www.youtube.com/@GhidraNinja",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "0857",
+      "title": "OALabs (unpacking playlists)",
+      "url": "https://www.youtube.com/@OALabs/videos",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "0888",
+      "title": "Stacksmashing (YouTube)",
+      "url": "https://www.youtube.com/@stacksmashing",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "0889",
+      "title": "LaurieWired",
+      "url": "https://www.youtube.com/@LaurieWired",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "0890",
+      "title": "Guided Hacking: RE Videos",
+      "url": "https://www.youtube.com/@GuidedHacking/videos",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "0891",
+      "title": "Vector 35 (Binary Ninja) YouTube",
+      "url": "https://www.youtube.com/@vector35",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "1199",
+      "title": "13Cubed Videos",
+      "url": "https://www.youtube.com/@13cubed/videos",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "1275",
+      "title": "GH YouTube Playlists",
+      "url": "https://www.youtube.com/@GuidedHacking/playlists",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "1278",
+      "title": "Fleep Tutorials (YouTube)",
+      "url": "https://www.youtube.com/@FleepTutorials/videos",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "1282",
+      "title": "Solaire GH (YouTube)",
+      "url": "https://www.youtube.com/@SolaireGH/videos",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "1347",
+      "title": "Ben Eater (YouTube)",
+      "url": "https://www.youtube.com/@BenEater",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "1350",
+      "title": "CS144 Video Playlist",
+      "url": "https://www.youtube.com/playlist?list=PLoCMsyE1cvdWKsLVyf6cPwCLDIZnOj0NS",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "1402",
+      "title": "TechWorld with Nana (YouTube)",
+      "url": "https://www.youtube.com/@TechWorldwithNana",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "1467",
+      "title": "Ben Eater: 6502 Playlist",
+      "url": "https://www.youtube.com/playlist?list=PLowKtXNTBypFbtuVMUVXNR0z1mu7dp7eH",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "1468",
+      "title": "Ben Eater: 8-Bit CPU Playlist",
+      "url": "https://www.youtube.com/playlist?list=PLowKtXNTBypGqImE405J2565dvjafglHU",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "1643",
+      "title": "freeCodeCamp YouTube",
+      "url": "https://www.youtube.com/@freecodecamp",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "1644",
+      "title": "Fireship YouTube",
+      "url": "https://www.youtube.com/@Fireship",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "1645",
+      "title": "The Coding Train",
+      "url": "https://www.youtube.com/@TheCodingTrain",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "1646",
+      "title": "Andrej Karpathy (channel)",
+      "url": "https://www.youtube.com/@AndrejKarpathy",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "1647",
+      "title": "sentdex",
+      "url": "https://www.youtube.com/@sentdex",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "1648",
+      "title": "Corey Schafer",
+      "url": "https://www.youtube.com/@coreyms",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "1649",
+      "title": "The Net Ninja",
+      "url": "https://www.youtube.com/@NetNinja",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "1650",
+      "title": "Web Dev Simplified",
+      "url": "https://www.youtube.com/@WebDevSimplified",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "1651",
+      "title": "Traversy Media",
+      "url": "https://www.youtube.com/@TraversyMedia",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "1652",
+      "title": "Programming with Mosh",
+      "url": "https://www.youtube.com/@programmingwithmosh",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "1653",
+      "title": "Computerphile",
+      "url": "https://www.youtube.com/@Computerphile",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "1654",
+      "title": "Numberphile",
+      "url": "https://www.youtube.com/@numberphile",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "1655",
+      "title": "DeepLearning.AI YouTube",
+      "url": "https://www.youtube.com/@Deeplearningai",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "1656",
+      "title": "Code Aesthetic",
+      "url": "https://www.youtube.com/@CodeAesthetic",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "1657",
+      "title": "ThePrimeagen",
+      "url": "https://www.youtube.com/@ThePrimeagen",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "1658",
+      "title": "Low Level Learning",
+      "url": "https://www.youtube.com/@LowLevelLearning",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "1659",
+      "title": "geohot Archive",
+      "url": "https://www.youtube.com/@geohotarchive",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "1660",
+      "title": "NetworkChuck",
+      "url": "https://www.youtube.com/@NetworkChuck",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "1661",
+      "title": "Ben Eater (channel)",
+      "url": "https://www.youtube.com/@BenEater",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "1662",
+      "title": "Sebastian Lague",
+      "url": "https://www.youtube.com/@SebastianLague",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "1663",
+      "title": "Coding Adventure Playlist",
+      "url": "https://www.youtube.com/playlist?list=PLFt_AvWsXl0eZgMK_DT5_biRkWXftAOf9",
+      "status": "playlist_or_non_direct_video"
+    },
+    {
+      "resource_id": "1698",
+      "title": "Kevin Powell (CSS)",
+      "url": "https://www.youtube.com/@KevinPowell",
+      "status": "playlist_or_non_direct_video"
+    }
+  ]
+}
