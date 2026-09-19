@@ -28,6 +28,8 @@ That milestone is now complete for the local DVD Side Entrance challenge. The re
 
 **KazamaDono learning catalog:** indexed at `data/kazamadono/` as untrusted, provenance-tracked metadata. The captured catalog contains 1,708 resources, 998 defensive-candidate records, and 101 YouTube-linked records. A bounded subtitle pass attempted 30 direct video links, retrieved 9 cleaned transcripts, recorded 21 unavailable or blocked links, and recorded 71 playlist/non-direct links without inventing transcripts. All retrieved text remains `quarantine_review` until license, prompt-injection, executable-content, and defensive-relevance review is complete. It is not policy or trusted memory.
 
+**Agent prerequisite gate:** every `inspect`, `analyze`, and allowlisted safe-check operation now validates the catalog hash relationships, retrieved-transcript file hashes, and quarantine admission state before running. `validate-knowledge` reports the verified snapshot. The imported Karpathy LLM transcript was analyzed in offline mode and produced an informational, human-gated result. Rust tests and the frontend build also passed through the agent worker; no third-party exploit or live-target exercise was executed.
+
 ## Verified commands
 
 ```bash

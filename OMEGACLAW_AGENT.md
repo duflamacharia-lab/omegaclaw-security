@@ -9,6 +9,7 @@ cargo run --bin omegaclaw-agent -- --workspace . inspect
 cargo run --bin omegaclaw-agent -- --workspace . analyze contracts/Vault.sol
 OMEGACLAW_ALLOW_COMMANDS=true cargo run --bin omegaclaw-agent -- --workspace . check rust-test
 cargo run --bin omegaclaw-agent -- --workspace . audit
+cargo run --bin omegaclaw-agent -- --workspace . validate-knowledge
 ```
 
 Supported checks are deliberately allowlisted: `rust-test`, `rust-format`, and `frontend-build`. Arbitrary shell commands are rejected. Command execution is disabled unless `OMEGACLAW_ALLOW_COMMANDS=true` is explicitly set in a trusted workspace.
@@ -35,6 +36,12 @@ The agent is an analysis and evidence system, not a live exploit runner. It does
 - treat model output as a final security judgment.
 
 Provider output is structured but still semantically untrusted. OmegaClaw records provider/model metadata and input/output hashes, preserves human-review requirements, and requires further verification before a Case File can be treated as actionable.
+
+## Knowledge prerequisites
+
+Every `inspect`, `analyze`, and safe-check operation validates `data/kazamadono/` first. The validator checks that the catalog, defensive-candidate manifest, and video-link manifest share the same catalog hash. It verifies every retrieved transcript file against its recorded SHA-256 digest and refuses transcript content marked as admitted before review. The prerequisite result is metadata/quarantine-only; it never grants a tool, target, credential, or execution capability.
+
+Set `OMEGACLAW_KNOWLEDGE_ROOT` only when using a separately verified snapshot. A missing, malformed, mismatched, or tampered knowledge snapshot fails closed.
 
 ## Gemini credential status
 

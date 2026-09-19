@@ -121,15 +121,25 @@ impl ToolRunner {
                         "bash".into(),
                         "-lc".into(),
                     ];
-                    let command = format!("cd /src && {} {}", program, shell_join(&args));
+                    let directory = if request.tool == "frontend-build" {
+                        "/src/frontend"
+                    } else {
+                        "/src"
+                    };
+                    let command = format!("cd {directory} && {} {}", program, shell_join(&args));
                     docker_args.push(command);
                     ("docker".into(), docker_args, WorkerMode::Docker)
                 }
                 _ => (program.to_string(), args.clone(), WorkerMode::Native),
             };
+        let working_directory = if request.tool == "frontend-build" {
+            self.config.workspace.join("frontend")
+        } else {
+            self.config.workspace.clone()
+        };
         let child = Command::new(&program)
             .args(&final_args)
-            .current_dir(&self.config.workspace)
+            .current_dir(working_directory)
             .stdin(Stdio::null())
             .stdout(Stdio::piped())
             .stderr(Stdio::piped())

@@ -37,6 +37,7 @@ enum Command {
         name: String,
     },
     Audit,
+    ValidateKnowledge,
     ValidateManifests {
         #[arg(long, default_value = "benchmarks/manifests.json")]
         path: PathBuf,
@@ -65,6 +66,10 @@ async fn main() -> anyhow::Result<()> {
             let events = agent.audit_events().await;
             println!("{}", serde_json::to_string_pretty(&events)?);
         }
+        Command::ValidateKnowledge => println!(
+            "{}",
+            serde_json::to_string_pretty(&agent.validate_knowledge_prerequisites()?)?
+        ),
         Command::ValidateManifests { path } => {
             #[derive(Deserialize)]
             struct Catalog {
